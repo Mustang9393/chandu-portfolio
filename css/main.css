@@ -650,12 +650,12 @@ body.cursor-text .cursor-ring {
 }
 
 .project-featured-left {
-  padding: var(--space-xl) var(--space-xl) var(--space-xl) 0;
+  padding: var(--space-xl) var(--space-xl) var(--space-xl) var(--gutter);
   border-right: 1px solid var(--border);
 }
 
 .project-featured-right {
-  padding: var(--space-xl) 0 var(--space-xl) var(--space-xl);
+  padding: var(--space-xl) var(--gutter) var(--space-xl) var(--space-xl);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -848,8 +848,13 @@ body.cursor-text .cursor-ring {
   position: relative;
 }
 
+.project-card:first-child {
+  padding-left: var(--gutter);
+}
+
 .project-card:last-child {
   border-right: none;
+  padding-right: var(--gutter);
 }
 
 .project-card:hover {
