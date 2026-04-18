@@ -1,0 +1,77 @@
+/* ============================================
+   TOKENS.CSS — Design Variables
+   Chandu MP Portfolio
+   ============================================ */
+
+:root {
+
+  /* ── Colours ── */
+  --bg:           #080808;
+  --bg-elevated:  #0f0f0f;
+  --bg-surface:   #141414;
+  --bg-hover:     #1a1a1a;
+
+  --border:       #1c1c1c;
+  --border-mid:   #282828;
+  --border-light: #333333;
+
+  --text-primary:   #f0ede8;   /* 16.5:1 on bg ✅ */
+  --text-secondary: #8a8a87;   /* 5.78:1 on bg ✅ */
+  --text-tertiary:  #484844;   /* decorative only */
+
+  --accent:       #c8b89a;     /* 10.28:1 on bg ✅ */
+  --accent-warm:  #e8d5b7;     /* 13.95:1 on bg ✅ */
+  --accent-dim:   rgba(200, 184, 154, 0.08);
+  --accent-border: rgba(200, 184, 154, 0.18);
+
+  --green:        #50b969;     /* 8.09:1 on bg ✅ */
+
+  /* ── Typography ── */
+  --font-serif:  'Playfair Display', Georgia, serif;
+  --font-sans:   'Syne', sans-serif;
+  --font-mono:   'DM Mono', monospace;
+
+  /* ── Type Scale ── */
+  --text-xs:   11px;
+  --text-sm:   13px;
+  --text-base: 15px;
+  --text-lg:   18px;
+  --text-xl:   clamp(20px, 2.2vw, 26px);
+  --text-2xl:  clamp(28px, 3.5vw, 40px);
+  --text-3xl:  clamp(40px, 5.5vw, 64px);
+  --text-hero: clamp(72px, 11vw, 128px);
+
+  /* ── Spacing ── */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+  --space-3xl: 128px;
+
+  /* ── Layout ── */
+  --max-width: 1120px;
+  --gutter:    clamp(24px, 5vw, 56px);
+
+  /* ── Borders ── */
+  --border-px: 1px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+
+  /* ── Transitions ── */
+  --ease-out:   cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in:    cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-inout: cubic-bezier(0.87, 0, 0.13, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast:   150ms;
+  --duration-base:   300ms;
+  --duration-slow:   600ms;
+  --duration-reveal: 900ms;
+
+  /* ── Z-index ── */
+  --z-base:    0;
+  --z-raised:  10;
+  --z-nav:     100;
+  --z-cursor:  1000;
+}
