@@ -509,26 +509,94 @@
     .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
+      /* Nav */
+      .cs-nav-title { display: none; }
+      .cs-nav-links { display: none; }
+
+      /* Hero */
+      .hero { min-height: auto; padding: 80px 0 48px; }
       .hero-meta { grid-template-columns: 1fr 1fr; }
       .hero-meta-item:nth-child(2) { border-right: none; }
+      .hero-meta-item:nth-child(3) { border-top: 1px solid #1c1c1c; }
+      .hero-meta-item:nth-child(4) { border-top: 1px solid #1c1c1c; border-right: none; }
+
+      /* Hook */
+      .hook { padding: 56px 0; }
       .hook-grid { grid-template-columns: 1fr; gap: 40px; }
-      .insight-grid { grid-template-columns: 1fr; }
-      .insight-card { border-right: none; border-bottom: 1px solid #1c1c1c; }
-      .insight-card:last-child { border-bottom: none; }
-      .screen-grid-3 { grid-template-columns: 1fr; }
-      .screen-grid-2 { grid-template-columns: 1fr; }
-      .motion-strip { grid-template-columns: 1fr; }
-      .motion-strip-left { border-right: none; border-bottom: 1px solid #1c1c1c; }
-      .outcome-grid { grid-template-columns: 1fr 1fr; }
-      .outcome-stat:nth-child(2) { border-right: none; }
-      .outcome-stat:nth-child(3) { border-bottom: 1px solid #1c1c1c; }
-      .closer-grid { grid-template-columns: 1fr; }
-      .decision-item { grid-template-columns: 56px 1fr; }
+      .hook-stat-number { font-size: clamp(48px, 14vw, 80px); }
+      .hook-pull-quote { font-size: 18px; }
+
+      /* Sections */
+      section { padding: 56px 0; }
+
+      /* Two-col grids → single col */
+      section > .container > div[style*="grid-template-columns: 1fr 1fr"],
+      section > .container > div[style*="grid-template-columns: 2fr 1fr"],
+      section > .container > div[style*="grid-template-columns: 1fr 2fr"] {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+      }
+
+      /* Insight cards */
+      .insight-grid { grid-template-columns: 1fr !important; }
+      .insight-card {
+        border-right: none !important;
+        border-bottom: 1px solid #1c1c1c !important;
+      }
+      .insight-card:last-child { border-bottom: none !important; }
+
+      /* Screen grids */
+      .screen-grid-2,
+      .screen-grid-3 { grid-template-columns: 1fr !important; gap: 20px !important; }
+
+      /* Decision list */
+      .decision-item { grid-template-columns: 48px 1fr; gap: 0; }
+      .decision-title { font-size: 15px; }
+      .decision-body { font-size: 13px; }
+
+      /* Pipeline */
+      .pipeline { padding: 24px; overflow-x: auto; }
+      .pipeline-row { flex-wrap: wrap; gap: 8px; }
+      .pipeline-node { padding: 10px 14px; }
+      .pipeline-node-title { font-size: 10px; }
+      .pipeline-node-sub { font-size: 8px; }
+
+      /* Motion strip */
+      .motion-strip { grid-template-columns: 1fr !important; }
+      .motion-strip-left { border-right: none; border-bottom: 1px solid #1c1c1c; padding: 32px 24px; }
+      .motion-strip-right { min-height: 200px; }
+
+      /* Outcomes */
+      .outcome-grid { grid-template-columns: 1fr 1fr !important; }
+      .outcome-number { font-size: clamp(24px, 7vw, 40px); }
+
+      /* Closer */
+      .closer-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+      .cta-row { flex-direction: column; gap: 12px; }
+      .btn-primary, .btn-secondary { justify-content: center; text-align: center; }
+
+      /* Footer */
+      .cs-footer { flex-direction: column; gap: 16px; align-items: flex-start; }
+      .footer-nav { flex-wrap: wrap; gap: 16px; }
     }
-    @media (max-width: 600px) {
+
+    @media (max-width: 480px) {
       .hero-meta { grid-template-columns: 1fr; }
-      .hero-meta-item { border-right: none; border-bottom: 1px solid #1c1c1c; }
+      .hero-meta-item { border-right: none !important; border-top: none !important; border-bottom: 1px solid #1c1c1c; }
+      .hero-meta-item:last-child { border-bottom: none; }
+
+      .hook-stat-number { font-size: clamp(40px, 16vw, 64px); }
+      .section-heading { font-size: clamp(22px, 7vw, 32px); }
+
+      .decision-item { grid-template-columns: 1fr; gap: 8px; }
+      .decision-num { padding-top: 0; }
+
+      .outcome-grid { grid-template-columns: 1fr !important; }
+      .outcome-stat { border-right: none !important; border-bottom: 1px solid #1c1c1c; }
+      .outcome-stat:last-child { border-bottom: none; }
+
+      .motion-frames { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
