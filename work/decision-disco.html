@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decision Disco — Case Study · Chandu MP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; cursor: none !important; }
+    html { font-size: 17px; scroll-behavior: smooth; overflow-x: hidden; }
+    body { background: #080808; color: #f4f1ec; font-family: 'Syne', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    :root {
+      --bg: #080808; --bg2: #0d0d0d; --bg3: #111;
+      --border: #242424; --border2: #303030;
+      --t1: #f4f1ec; --t2: #a8a8a4; --t3: #585854;
+      --accent: #3ecfff; --adim: rgba(62,207,255,.07); --aborder: rgba(62,207,255,.2);
+      --green: #5ec974; --purple: #a78bfa;
+      --serif: 'Playfair Display', serif;
+      --mono: 'DM Mono', monospace;
+      --ease: cubic-bezier(0.16,1,0.3,1);
+      --gutter: clamp(24px,5vw,56px);
+    }
+
+    /* Cursor */
+    .cursor-dot { position:fixed; top:0; left:0; width:8px; height:8px; background:var(--accent); border-radius:50%; pointer-events:none; z-index:1000; transform:translate(-50%,-50%); transition:width .3s var(--ease),height .3s,background .3s; will-change:transform; }
+    .cursor-ring { position:fixed; top:0; left:0; width:36px; height:36px; border:1px solid rgba(62,207,255,.35); border-radius:50%; pointer-events:none; z-index:1000; transform:translate(-50%,-50%); transition:width .4s var(--ease),height .4s,border-color .4s; will-change:transform; }
+    body.ch .cursor-dot { width:48px; height:48px; background:rgba(62,207,255,.1); border-radius:50%; }
+    body.ch .cursor-ring { width:48px; height:48px; border-color:var(--accent); }
+
+    /* Layout */
+    .container { max-width:1080px; margin:0 auto; padding:0 var(--gutter); }
+
+    /* Nav */
+    .nav { position:fixed; top:0; left:0; right:0; height:60px; display:flex; align-items:center; background:rgba(8,8,8,.92); backdrop-filter:blur(16px); border-bottom:1px solid var(--border); z-index:100; }
+    .nav .container { display:flex; align-items:center; justify-content:space-between; width:100%; }
+    .nav-back { font-family:var(--mono); font-size:11px; color:var(--t2); letter-spacing:.1em; text-transform:uppercase; display:flex; align-items:center; gap:8px; transition:color .2s; }
+    .nav-back::before { content:'←'; font-size:14px; }
+    .nav-back:hover { color:var(--accent); }
+    .nav-title { font-family:var(--mono); font-size:11px; color:var(--t3); letter-spacing:.1em; text-transform:uppercase; }
+    .nav-cta { font-family:var(--mono); font-size:11px; color:var(--t3); letter-spacing:.1em; text-transform:uppercase; transition:color .2s; }
+    .nav-cta:hover { color:var(--t2); }
+
+    /* Hero */
+    .hero { min-height:100svh; display:flex; flex-direction:column; justify-content:flex-end; padding:64px 0 72px; position:relative; overflow:hidden; }
+    .hero-bg { position:absolute; inset:0; background:radial-gradient(ellipse 50% 60% at 70% 20%, rgba(167,139,250,.06) 0%, transparent 70%); }
+    .hero .container { position:relative; z-index:2; }
+    .hero-eyebrow { font-family:var(--mono); font-size:11px; color:var(--t3); letter-spacing:.18em; text-transform:uppercase; display:flex; align-items:center; gap:14px; margin-bottom:28px; opacity:0; animation:fadeUp .8s .3s var(--ease) forwards; }
+    .hero-eyebrow::before { content:''; width:24px; height:1px; background:var(--border2); }
+    .hero-title { font-family:var(--serif); font-size:clamp(52px,8vw,96px); font-weight:700; line-height:.92; letter-spacing:-.03em; color:var(--t1); margin-bottom:32px; opacity:0; animation:fadeUp .9s .5s var(--ease) forwards; }
+    .hero-title em { font-style:italic; color:var(--purple); }
+    .hero-meta { display:grid; grid-template-columns:1fr 1fr 1fr 1fr; border-top:1px solid var(--border); opacity:0; animation:fadeUp .8s .8s var(--ease) forwards; }
+    .meta-item { padding:20px 0 20px 24px; border-right:1px solid var(--border); }
+    .meta-item:first-child { padding-left:0; }
+    .meta-item:last-child { border-right:none; }
+    .meta-label { font-family:var(--mono); font-size:10px; color:var(--t3); letter-spacing:.14em; text-transform:uppercase; margin-bottom:6px; }
+    .meta-value { font-size:14px; color:var(--t2); }
+    .meta-value strong { color:var(--t1); font-weight:700; }
+
+    /* Sections */
+    section { padding:80px 0; border-bottom:1px solid var(--border); }
+    .sec-header { display:flex; align-items:center; gap:16px; padding:28px 0; margin-bottom:48px; border-bottom:1px solid var(--border); }
+    .sec-num { font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:.12em; }
+    .sec-rule { flex:1; height:1px; background:var(--border); }
+    .sec-diamond { font-size:7px; color:var(--border2); }
+    .sec-label { font-family:var(--mono); font-size:10px; color:var(--t3); letter-spacing:.18em; text-transform:uppercase; }
+
+    h2.heading { font-family:var(--serif); font-size:clamp(28px,4vw,48px); font-weight:700; line-height:1.1; color:var(--t1); margin-bottom:20px; }
+    h2.heading em { font-style:italic; color:var(--accent); }
+    .body { font-size:16px; color:var(--t2); line-height:1.9; max-width:620px; }
+    .body strong { color:var(--t1); font-weight:700; }
+    .body + .body { margin-top:16px; }
+
+    /* Two col */
+    .two-col { display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
+
+    /* Callout */
+    .callout { background:var(--bg2); border:1px solid var(--border); border-left:3px solid var(--purple); padding:28px 32px; margin:40px 0; }
+    .callout-label { font-family:var(--mono); font-size:10px; color:var(--purple); letter-spacing:.14em; text-transform:uppercase; margin-bottom:10px; }
+    .callout-text { font-family:var(--serif); font-size:clamp(17px,2vw,22px); font-style:italic; line-height:1.55; color:var(--t1); }
+
+    /* Stack item */
+    .stack-list { display:flex; flex-direction:column; border:1px solid var(--border); }
+    .stack-item { display:grid; grid-template-columns:100px 1fr; gap:0; border-bottom:1px solid var(--border); transition:background .2s; }
+    .stack-item:last-child { border-bottom:none; }
+    .stack-item:hover { background:var(--bg2); }
+    .stack-role { font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; padding:20px 20px 20px 24px; border-right:1px solid var(--border); display:flex; align-items:center; }
+    .stack-detail { padding:20px 24px; }
+    .stack-tool { font-size:15px; font-weight:700; color:var(--t1); margin-bottom:4px; }
+    .stack-desc { font-size:13px; color:var(--t2); line-height:1.6; }
+
+    /* Flow steps */
+    .flow-steps { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--border); }
+    .flow-step { padding:32px 28px; border-right:1px solid var(--border); position:relative; transition:background .2s; }
+    .flow-step:last-child { border-right:none; }
+    .flow-step:hover { background:var(--bg2); }
+    .flow-num { font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:.12em; margin-bottom:16px; }
+    .flow-title { font-size:15px; font-weight:700; color:var(--t1); margin-bottom:8px; }
+    .flow-body { font-size:13px; color:var(--t2); line-height:1.7; }
+    /* Arrow between steps */
+    .flow-step:not(:last-child)::after { content:'→'; position:absolute; right:-14px; top:50%; transform:translateY(-50%); font-size:16px; color:var(--border2); z-index:1; }
+
+    /* App mockup */
+    .app-mockup { background:var(--bg2); border:1px solid var(--border); padding:0; overflow:hidden; }
+    .app-mockup-bar { background:#111; border-bottom:1px solid var(--border); height:32px; display:flex; align-items:center; padding:0 12px; gap:6px; }
+    .app-dot { width:10px; height:10px; border-radius:50%; }
+    .app-url { margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--t3); }
+
+    /* Category pills */
+    .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:32px 0; }
+    .cat-pill { background:var(--bg2); border:1px solid var(--border); padding:16px 18px; display:flex; align-items:center; gap:12px; transition:border-color .2s, background .2s; }
+    .cat-pill:hover { border-color:var(--accent); background:#0a1419; }
+    .cat-emoji { font-size:18px; flex-shrink:0; }
+    .cat-name { font-size:14px; font-weight:700; color:var(--t1); }
+    .cat-vibe { font-family:var(--mono); font-size:10px; color:var(--t3); margin-top:2px; }
+
+    /* Outcome stats */
+    .outcome-row { display:grid; grid-template-columns:repeat(3,1fr); border:1px solid var(--border); }
+    .outcome-stat { padding:32px 24px; border-right:1px solid var(--border); transition:background .2s; }
+    .outcome-stat:last-child { border-right:none; }
+    .outcome-stat:hover { background:var(--bg2); }
+    .outcome-num { font-family:var(--serif); font-size:clamp(36px,5vw,56px); font-weight:700; font-style:italic; color:var(--accent); line-height:1; margin-bottom:8px; }
+    .outcome-label strong { color:var(--t1); display:block; margin-bottom:2px; font-size:14px; }
+    .outcome-label { font-size:13px; color:var(--t2); line-height:1.5; }
+
+    /* Insight list */
+    .insight-list { display:flex; flex-direction:column; }
+    .insight-row { display:grid; grid-template-columns:32px 1fr; gap:16px; padding:20px 0; border-bottom:1px solid var(--border); }
+    .insight-row:first-child { border-top:1px solid var(--border); }
+    .insight-idx { font-family:var(--mono); font-size:10px; color:var(--accent); letter-spacing:.1em; padding-top:3px; }
+    .insight-title { font-size:15px; font-weight:700; color:var(--t1); margin-bottom:4px; }
+    .insight-body { font-size:14px; color:var(--t2); line-height:1.7; }
+
+    /* Buttons */
+    .btn-primary { font-family:var(--mono); font-size:11px; color:#080808; background:var(--accent); padding:13px 24px; letter-spacing:.1em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; box-shadow:4px 4px 0 rgba(62,207,255,.2); transition:transform .15s,box-shadow .15s; }
+    .btn-primary:hover { transform:translate(2px,2px); box-shadow:2px 2px 0 rgba(62,207,255,.2); }
+    .btn-secondary { font-family:var(--mono); font-size:11px; color:var(--t2); background:transparent; padding:13px 24px; letter-spacing:.1em; text-transform:uppercase; border:1px solid var(--border); display:inline-flex; align-items:center; gap:8px; transition:border-color .2s,color .2s; }
+    .btn-secondary:hover { border-color:var(--t2); color:var(--t1); }
+    .cta-row { display:flex; gap:16px; flex-wrap:wrap; margin-top:32px; }
+
+    /* Tag */
+    .tag { font-family:var(--mono); font-size:10px; color:var(--accent); background:var(--adim); border:1px solid var(--aborder); padding:3px 10px; letter-spacing:.07em; text-transform:uppercase; }
+    .tag-row { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
+
+    /* Next project */
+    .next-project { border:1px solid var(--border); padding:32px; }
+
+    /* Footer */
+    .cs-footer { border-top:1px solid var(--border); padding:28px 0; display:flex; align-items:center; justify-content:space-between; }
+    .footer-nav { display:flex; gap:32px; }
+    .footer-nav a { font-family:var(--mono); font-size:11px; color:var(--t3); letter-spacing:.08em; text-transform:uppercase; transition:color .2s; }
+    .footer-nav a:hover { color:var(--accent); }
+    .footer-copy { font-family:var(--mono); font-size:11px; color:var(--border2); letter-spacing:.06em; }
+    .divider { height:1px; background:var(--border); margin:36px 0; }
+
+    /* Animations */
+    @keyframes fadeUp { from { opacity:0; transform:translateY(20px); } to { opacity:1; transform:translateY(0); } }
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .8s var(--ease),transform .8s var(--ease); }
+    .reveal.visible { opacity:1; transform:translateY(0); }
+    .reveal-left { opacity:0; transform:translateX(-20px); transition:opacity .8s var(--ease),transform .8s var(--ease); }
+    .reveal-left.visible { opacity:1; transform:translateX(0); }
+    .reveal-right { opacity:0; transform:translateX(20px); transition:opacity .8s var(--ease),transform .8s var(--ease); }
+    .reveal-right.visible { opacity:1; transform:translateX(0); }
+
+    /* Responsive */
+    @media (max-width:768px) {
+      .nav-title { display:none; }
+      .hero { min-height:auto; padding:80px 0 48px; }
+      .hero-meta { grid-template-columns:1fr 1fr; }
+      .meta-item:nth-child(2) { border-right:none; }
+      .meta-item:nth-child(3),.meta-item:nth-child(4) { border-top:1px solid var(--border); }
+      .meta-item:nth-child(4) { border-right:none; }
+      section { padding:56px 0; }
+      .two-col { grid-template-columns:1fr; gap:40px; }
+      .flow-steps { grid-template-columns:1fr; }
+      .flow-step { border-right:none; border-bottom:1px solid var(--border); }
+      .flow-step:last-child { border-bottom:none; }
+      .flow-step::after { display:none; }
+      .cat-grid { grid-template-columns:1fr 1fr; }
+      .outcome-row { grid-template-columns:1fr; }
+      .outcome-stat { border-right:none; border-bottom:1px solid var(--border); }
+      .outcome-stat:last-child { border-bottom:none; }
+      .stack-item { grid-template-columns:1fr; }
+      .stack-role { border-right:none; border-bottom:1px solid var(--border); padding:12px 24px; }
+      .cs-footer { flex-direction:column; gap:16px; align-items:flex-start; }
+      .footer-nav { flex-wrap:wrap; gap:16px; }
+    }
+    @media (max-width:480px) {
+      .hero-meta { grid-template-columns:1fr; }
+      .meta-item { border-right:none !important; border-top:none !important; border-bottom:1px solid var(--border); }
+      .cat-grid { grid-template-columns:1fr; }
+      .cta-row { flex-direction:column; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="container">
+      <a href="../index.html" class="nav-back">All work</a>
+      <span class="nav-title">Decision Disco</span>
+      <a href="https://decision-disco.vercel.app" target="_blank" rel="noopener" class="nav-cta">Try it live ↗</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="container">
+      <div class="hero-eyebrow">005 &mdash; 48 hours &mdash; Designer + Builder + Founder</div>
+      <h1 class="hero-title">
+        A friend couldn't<br>pick a restaurant.<br>
+        <em>I shipped an app.</em>
+      </h1>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <div class="meta-label">Project</div>
+          <div class="meta-value"><strong>Decision Disco</strong></div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Built in</div>
+          <div class="meta-value"><strong>48 hours</strong>, solo</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Stack</div>
+          <div class="meta-value">Gemini API · Vanilla JS · Vercel</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Status</div>
+          <div class="meta-value"><strong style="color:var(--green)">■ Live</strong> &mdash; decision-disco.vercel.app</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOOK -->
+  <section style="padding:80px 0; border-bottom:1px solid var(--border);">
+    <div class="container">
+      <div class="two-col">
+        <div class="reveal-left">
+          <div class="tag-row">
+            <span class="tag">AI Product</span>
+            <span class="tag">Vibe Coded</span>
+            <span class="tag">Gemini API</span>
+            <span class="tag">Self-initiated</span>
+          </div>
+          <h2 class="heading">The paradox of choice is real.<br><em>Most tools make it worse.</em></h2>
+          <p class="body" style="margin-top:16px;">Decision fatigue is one of the most universal human experiences. You don't need more information — you already have it. What you need is a framework to cut through it. Something direct. Something with a spine.</p>
+          <p class="body" style="margin-top:16px;">Generic AI advice fails because it hedges everything. "On one hand… on the other hand…" The point is to make the decision, not catalogue the considerations. I wanted to build something that actually <strong>told you what to do</strong> — with reasoning, but without the hand-wringing.</p>
+          <div class="callout" style="margin-top:40px;">
+            <div class="callout-label">The origin</div>
+            <p class="callout-text">"My friend was stuck between two lunch options for literally 20 minutes. I pulled up ChatGPT. It gave him three paragraphs. He was more confused than before. I had an idea."</p>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <!-- Live app mockup - Browser frame -->
+          <div class="app-mockup">
+            <div class="app-mockup-bar">
+              <div class="app-dot" style="background:#ff5f57;"></div>
+              <div class="app-dot" style="background:#febc2e;"></div>
+              <div class="app-dot" style="background:#28c840;"></div>
+              <span class="app-url">decision-disco.vercel.app</span>
+            </div>
+            <div style="padding:40px 32px; background:#080808; min-height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;">
+              <!-- App header -->
+              <div style="text-align:center;">
+                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.2em; text-transform:uppercase; margin-bottom:10px;">✨ Decision Disco</div>
+                <div style="font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,30px); font-weight:700; color:var(--t1); line-height:1.2;">Real advice.<br>No coin flips.</div>
+              </div>
+              <!-- Vibe selector -->
+              <div style="width:100%; max-width:380px;">
+                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px;">The Vibe</div>
+                <div style="background:var(--bg2); border:1px solid var(--border); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; font-size:14px; color:var(--t2);">
+                  <span>🍔 Food &amp; Lunch</span>
+                  <span style="color:var(--t3); font-size:12px;">▾</span>
+                </div>
+              </div>
+              <!-- Question input -->
+              <div style="width:100%; max-width:380px;">
+                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px;">The Question</div>
+                <div style="background:var(--bg2); border:1px solid var(--accent); border-left:3px solid var(--accent); padding:16px 18px; min-height:72px; font-size:14px; color:var(--t3); font-style:italic;">
+                  Biryani or pasta? I've been thinking about this for 20 minutes...
+                </div>
+              </div>
+              <!-- CTA -->
+              <div style="background:var(--accent); color:#080808; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; padding:14px 32px; display:inline-flex; align-items:center; gap:8px; font-weight:400;">
+                Get Clarity →
+              </div>
+            </div>
+          </div>
+          <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--t3); letter-spacing:.06em; padding:10px 0; display:flex; align-items:center; gap:8px;">
+            <span style="color:var(--border2);">↑</span> The actual app — live at decision-disco.vercel.app
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">01</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">The problem</span>
+      </div>
+
+      <div class="insight-list reveal">
+        <div class="insight-row">
+          <div class="insight-idx">01</div>
+          <div>
+            <div class="insight-title">Analysis paralysis is universal</div>
+            <div class="insight-body">The Paradox of Choice — more options, more anxiety. Studies show that having 6 options vs 24 options increases purchase rates from 3% to 30%. People don't need more data. They need a verdict.</div>
+          </div>
+        </div>
+        <div class="insight-row">
+          <div class="insight-idx">02</div>
+          <div>
+            <div class="insight-title">Generic AI advice is useless</div>
+            <div class="insight-body">Ask ChatGPT "should I take this job?" and it'll give you 400 words of "on the other hand." The problem is it doesn't know anything about you. It has no context, no stakes, no skin in the game.</div>
+          </div>
+        </div>
+        <div class="insight-row">
+          <div class="insight-idx">03</div>
+          <div>
+            <div class="insight-title">Context is the missing ingredient</div>
+            <div class="insight-body">The difference between a good decision and a bad one isn't the information available — it's whether the right questions were asked first. Most AI tools skip this diagnostic step entirely.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE SOLUTION -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">02</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">The solution</span>
+      </div>
+
+      <div class="two-col reveal" style="margin-bottom:56px;">
+        <div>
+          <h2 class="heading">A decisive,<br>slightly opinionated<br><em>AI mentor.</em></h2>
+          <p class="body" style="margin-top:16px;">Three design principles drove every decision: <strong>be specific</strong> (ask the right questions before answering), <strong>be decisive</strong> (give a clear recommendation, not a list of considerations), and <strong>match the vibe</strong> (the tone for a lunch choice is different from a career move).</p>
+        </div>
+        <div>
+          <p class="body">Six categories, each with distinct AI personas baked into the system prompts. The app knows that someone asking about lunch wants a quick, confident answer with a laugh. Someone asking about a career change needs structured reasoning with caveats.</p>
+          <p class="body" style="margin-top:16px;">The insight about personas came from a simple observation: the same person makes decisions differently depending on the stakes. The UX needed to match.</p>
+        </div>
+      </div>
+
+      <!-- Category grid -->
+      <div class="cat-grid reveal">
+        <div class="cat-pill">
+          <span class="cat-emoji">🍔</span>
+          <div>
+            <div class="cat-name">Food &amp; Lunch</div>
+            <div class="cat-vibe">Vibe: Fast &amp; opinionated</div>
+          </div>
+        </div>
+        <div class="cat-pill">
+          <span class="cat-emoji">🎬</span>
+          <div>
+            <div class="cat-name">Movies &amp; Plans</div>
+            <div class="cat-vibe">Vibe: Casual &amp; fun</div>
+          </div>
+        </div>
+        <div class="cat-pill">
+          <span class="cat-emoji">❤️</span>
+          <div>
+            <div class="cat-name">Love &amp; Dating</div>
+            <div class="cat-vibe">Vibe: Honest, no fluff</div>
+          </div>
+        </div>
+        <div class="cat-pill">
+          <span class="cat-emoji">💼</span>
+          <div>
+            <div class="cat-name">Career &amp; Ambition</div>
+            <div class="cat-vibe">Vibe: Structured &amp; sharp</div>
+          </div>
+        </div>
+        <div class="cat-pill">
+          <span class="cat-emoji">💰</span>
+          <div>
+            <div class="cat-name">Money &amp; Buying</div>
+            <div class="cat-vibe">Vibe: Direct &amp; practical</div>
+          </div>
+        </div>
+        <div class="cat-pill">
+          <span class="cat-emoji">🌱</span>
+          <div>
+            <div class="cat-name">Big Life Changes</div>
+            <div class="cat-vibe">Vibe: Thoughtful &amp; grounded</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE FLOW -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">03</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">Interaction design</span>
+      </div>
+
+      <div class="reveal" style="margin-bottom:48px;">
+        <h2 class="heading" style="font-size:clamp(22px,3vw,36px); margin-bottom:12px;">Three steps.<br><em>One clear verdict.</em></h2>
+        <p class="body" style="max-width:560px;">The entire interaction was designed to feel like talking to a decisive friend — not reading a Wikipedia article. The flow is minimal on purpose.</p>
+      </div>
+
+      <div class="flow-steps reveal">
+        <div class="flow-step">
+          <div class="flow-num">Step 01 &mdash; Categorise</div>
+          <div class="flow-title">Pick your dilemma type</div>
+          <div class="flow-body">The category doesn't just organise the interface — it loads a different AI persona. Lunch mode is cheeky. Career mode is structured. The same backend, six different voices.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">Step 02 &mdash; Question</div>
+          <div class="flow-title">State your dilemma</div>
+          <div class="flow-body">A single open text field. No forms, no dropdowns, no multiple choice. Just "what's the problem?" in plain language. The AI does the diagnostic work — you don't have to pre-structure anything.</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-num">Step 03 &mdash; Verdict</div>
+          <div class="flow-title">Get the answer</div>
+          <div class="flow-body">A clear, direct recommendation. No "it depends." The AI is instructed to pick a side and defend it — then show the reasoning after. Decision first, context second.</div>
+        </div>
+      </div>
+
+      <!-- The key design detail -->
+      <div class="callout reveal" style="margin-top:48px; border-left-color:var(--accent);">
+        <div class="callout-label" style="color:var(--accent);">Key design decision</div>
+        <p class="callout-text">"Most AI tools show you the reasoning first and bury the verdict. I flipped this. The verdict comes first, big and clear. The user can read the reasoning if they want — but they already have an answer."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIBE CODING -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">04</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">How it was built</span>
+      </div>
+
+      <div class="two-col reveal">
+        <div>
+          <h2 class="heading" style="font-size:clamp(22px,3vw,40px);">Vibe coding:<br>Design logic<br><em>as the superpower.</em></h2>
+          <p class="body" style="margin-top:16px;">I didn't write every line of this code the traditional way. I used AI as a force multiplier — generating boilerplate, debugging logic, and scaffolding structure. What I brought was the information architecture, the system prompt engineering, and the design judgment.</p>
+          <p class="body" style="margin-top:16px;">The result: concept to deployed URL in 48 hours. Solo. No engineers. No handoff docs.</p>
+          <p class="body" style="margin-top:16px;">This is what "designer who builds" actually means. Not "designer who learned React." It means knowing what to build and using every available tool to build it faster than anyone expects.</p>
+        </div>
+        <div>
+          <div class="stack-list">
+            <div class="stack-item">
+              <div class="stack-role">Intelligence</div>
+              <div class="stack-detail">
+                <div class="stack-tool">Gemini 1.5 Flash-Lite</div>
+                <div class="stack-desc">Low latency, cost-efficient. System prompts engineer the "decisive mentor" persona. The model is instructed to pick a side, always.</div>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-role">Frontend</div>
+              <div class="stack-detail">
+                <div class="stack-tool">Vanilla JS + HTML + CSS</div>
+                <div class="stack-desc">No framework overhead. Loads in under 1 second. Fully responsive. Deliberately simple so iteration is instant.</div>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-role">Backend</div>
+              <div class="stack-detail">
+                <div class="stack-tool">Node.js on Vercel</div>
+                <div class="stack-desc">Serverless functions for the API calls. Environment variables for key management. Zero infrastructure overhead.</div>
+              </div>
+            </div>
+            <div class="stack-item">
+              <div class="stack-role">Dev workflow</div>
+              <div class="stack-detail">
+                <div class="stack-tool">ChatGPT + Grok + VS Code</div>
+                <div class="stack-desc">ChatGPT for rapid iteration and vibe coding. Grok for alternative reasoning on edge cases. VS Code as the actual environment.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOME -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">05</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">Outcome</span>
+      </div>
+
+      <div class="two-col reveal" style="margin-bottom:48px; align-items:center;">
+        <div>
+          <h2 class="heading">Idea to deployed.<br><em>48 hours.</em></h2>
+          <p class="body" style="margin-top:16px; max-width:460px;">It's live. People use it. The friend who inspired it still uses it for lunch. That's the whole point — a real product that solves a real problem, shipped without the overhead of a traditional development process.</p>
+          <div class="cta-row">
+            <a href="https://decision-disco.vercel.app" target="_blank" rel="noopener" class="btn-primary">Try it live ↗</a>
+          </div>
+        </div>
+        <div>
+          <div class="outcome-row">
+            <div class="outcome-stat">
+              <div class="outcome-num">48h</div>
+              <div class="outcome-label"><strong>Concept to deployed</strong>Design + code + ship, solo</div>
+            </div>
+            <div class="outcome-stat">
+              <div class="outcome-num">6</div>
+              <div class="outcome-label"><strong>AI personas</strong>One per dilemma category</div>
+            </div>
+            <div class="outcome-stat">
+              <div class="outcome-num">0</div>
+              <div class="outcome-label"><strong>Handoffs needed</strong>Designer = Builder = Founder</div>
+            </div>
+          </div>
+
+          <!-- What I learned -->
+          <div style="border:1px solid var(--border); border-top:none; padding:28px;">
+            <div class="meta-label" style="margin-bottom:16px;">What this project proved</div>
+            <div class="insight-list">
+              <div class="insight-row" style="padding:14px 0;">
+                <div class="insight-idx" style="font-size:9px; color:var(--green);">✓</div>
+                <div class="insight-body" style="font-size:13px;">System prompt engineering is a design skill — how you instruct the model shapes the entire UX</div>
+              </div>
+              <div class="insight-row" style="padding:14px 0;">
+                <div class="insight-idx" style="font-size:9px; color:var(--green);">✓</div>
+                <div class="insight-body" style="font-size:13px;">Vanilla-first is underrated — no framework means faster iteration and fewer abstraction layers to debug</div>
+              </div>
+              <div class="insight-row" style="padding:14px 0; border-bottom:none;">
+                <div class="insight-idx" style="font-size:9px; color:var(--green);">✓</div>
+                <div class="insight-body" style="font-size:13px;">Designers who can ship have an unfair advantage — the feedback loop from idea to live product is incompressible</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSER -->
+  <section style="border-bottom:none; padding-bottom:80px;">
+    <div class="container">
+      <div class="two-col reveal">
+        <div>
+          <div class="meta-label" style="margin-bottom:16px;">The bigger picture</div>
+          <h2 class="heading" style="font-size:clamp(22px,3vw,38px);">This is how I<br>like to work.<br><em>Fast. Real. Shipped.</em></h2>
+          <p class="body" style="margin-top:16px; max-width:460px;">Decision Disco isn't a portfolio piece that lives in Figma. It's a URL you can type into a browser right now. That distinction matters. Every project I take on has the same goal — make something real that solves a real problem for real people.</p>
+          <p class="body" style="margin-top:16px;">No decks. No handoffs. Just design → build → ship.</p>
+        </div>
+        <div>
+          <div class="next-project">
+            <div class="meta-label" style="margin-bottom:20px;">Back to start</div>
+            <div style="font-family:var(--mono); font-size:10px; color:var(--t3); margin-bottom:12px; letter-spacing:.1em;">001</div>
+            <h3 style="font-family:var(--serif); font-size:24px; font-weight:700; color:var(--t1); margin-bottom:8px; line-height:1.2;">Qurios AI</h3>
+            <p style="font-size:14px; color:var(--t2); margin-bottom:20px; line-height:1.7;">Your knowledge, turned into a Mind. 8 months, 3 iterations, $250K raised.</p>
+            <a href="qurios.html" style="font-family:var(--mono); font-size:11px; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; border:1px solid var(--aborder); padding:10px 18px; transition:background .2s;" onmouseover="this.style.background='var(--adim)'" onmouseout="this.style.background='transparent'">View case study →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="cs-footer">
+        <span class="footer-copy">© Chandu MP · 2025</span>
+        <nav class="footer-nav">
+          <a href="../index.html">Home</a>
+          <a href="qurios.html">Qurios AI</a>
+          <a href="cultureco.html">CultureCo</a>
+          <a href="mailto:chandu.mp.14l@gmail.com">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const dot = document.querySelector('.cursor-dot');
+    const ring = document.querySelector('.cursor-ring');
+    let mouse = {x:0,y:0}, rp = {x:0,y:0};
+    window.addEventListener('mousemove', e => {
+      mouse.x = e.clientX; mouse.y = e.clientY;
+      dot.style.left = e.clientX+'px'; dot.style.top = e.clientY+'px';
+    });
+    (function loop(){ rp.x+=(mouse.x-rp.x)*.12; rp.y+=(mouse.y-rp.y)*.12; ring.style.left=rp.x+'px'; ring.style.top=rp.y+'px'; requestAnimationFrame(loop); })();
+    document.querySelectorAll('a,button,.cat-pill,.flow-step,.outcome-stat,.stack-item,.insight-row').forEach(el=>{
+      el.addEventListener('mouseenter',()=>document.body.classList.add('ch'));
+      el.addEventListener('mouseleave',()=>document.body.classList.remove('ch'));
+    });
+    document.addEventListener('mouseleave',()=>{dot.style.opacity='0';ring.style.opacity='0';});
+    document.addEventListener('mouseenter',()=>{dot.style.opacity='1';ring.style.opacity='1';});
+    const obs = new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    },{threshold:.08,rootMargin:'0px 0px -32px 0px'});
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach((el,i)=>{
+      const sibs = el.parentElement ? Array.from(el.parentElement.children) : [];
+      const idx = sibs.filter(s=>s.classList.contains('reveal')||s.classList.contains('reveal-left')||s.classList.contains('reveal-right')).indexOf(el);
+      if(idx>0) el.style.transitionDelay=(idx*80)+'ms';
+      obs.observe(el);
+    });
+  </script>
+</body>
+</html>
