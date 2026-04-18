@@ -11,7 +11,7 @@
     /* ── Cursor (standalone for case study pages) ── */
     .cursor-dot {
       position: fixed; top: 0; left: 0; width: 8px; height: 8px;
-      background: #c8b89a; border-radius: 50%;
+      background: #3ecfff; border-radius: 50%;
       pointer-events: none; z-index: 1000;
       transform: translate(-50%, -50%);
       transition: width 0.3s cubic-bezier(0.16,1,0.3,1), height 0.3s cubic-bezier(0.16,1,0.3,1), background 0.3s, border-radius 0.3s;
@@ -26,7 +26,7 @@
       will-change: transform;
     }
     body.cursor-hover .cursor-dot { width: 48px; height: 48px; background: rgba(200,184,154,0.1); border-radius: 50%; }
-    body.cursor-hover .cursor-ring { width: 48px; height: 48px; border-color: #c8b89a; }
+    body.cursor-hover .cursor-ring { width: 48px; height: 48px; border-color: #3ecfff; }
     *, *::before, *::after { cursor: none !important; }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400;1,700&family=DM+Mono:wght@300;400&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
@@ -64,7 +64,7 @@
       display: flex; align-items: center; gap: 8px;
       transition: color 0.2s;
     }
-    .cs-nav-back:hover { color: #c8b89a; }
+    .cs-nav-back:hover { color: #3ecfff; }
     .cs-nav-back::before { content: '←'; font-size: 14px; }
     .cs-nav-title {
       font-family: 'DM Mono', monospace; font-size: 11px;
@@ -89,7 +89,7 @@
       position: absolute; inset: 0; z-index: 0;
       background:
         radial-gradient(ellipse 60% 50% at 70% 40%, rgba(0, 120, 160, 0.07) 0%, transparent 70%),
-        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(200, 184, 154, 0.04) 0%, transparent 60%);
+        radial-gradient(ellipse 40% 60% at 20% 70%, rgba(62, 207, 255, 0.04) 0%, transparent 60%);
     }
     .hero-grain {
       position: absolute; inset: 0; z-index: 1; opacity: 0.3;
@@ -143,7 +143,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(64px, 10vw, 120px);
       font-weight: 700; font-style: italic;
-      color: #c8b89a; line-height: 1;
+      color: #3ecfff; line-height: 1;
       letter-spacing: -0.03em;
     }
     .hook-stat-label {
@@ -159,7 +159,7 @@
       font-style: italic; line-height: 1.45;
       color: #f0ede8; margin-bottom: 24px;
       padding-left: 24px;
-      border-left: 2px solid #c8b89a;
+      border-left: 2px solid #3ecfff;
     }
     .hook-body {
       font-size: 15px; color: #8a8a87;
@@ -173,7 +173,7 @@
       padding: 28px 0; margin-bottom: 56px;
       border-bottom: 1px solid #1c1c1c;
     }
-    .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: #c8b89a; letter-spacing: 0.12em; }
+    .section-num { font-family: 'DM Mono', monospace; font-size: 10px; color: #3ecfff; letter-spacing: 0.12em; }
     .section-rule { flex: 1; height: 1px; background: #1c1c1c; }
     .section-diamond { font-size: 7px; color: #333; }
     .section-label { font-family: 'DM Mono', monospace; font-size: 10px; color: #484844; letter-spacing: 0.18em; text-transform: uppercase; }
@@ -188,7 +188,7 @@
       font-weight: 700; line-height: 1.1;
       color: #f0ede8; margin-bottom: 20px;
     }
-    .section-heading em { font-style: italic; color: #c8b89a; }
+    .section-heading em { font-style: italic; color: #3ecfff; }
     .section-heading.ghost {
       color: transparent;
       -webkit-text-stroke: 1px #333;
@@ -205,7 +205,7 @@
     .iteration-label {
       display: inline-flex; align-items: center; gap: 10px;
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; letter-spacing: 0.14em; text-transform: uppercase;
+      color: #3ecfff; letter-spacing: 0.14em; text-transform: uppercase;
       border: 1px solid rgba(200,184,154,0.2);
       background: rgba(200,184,154,0.05);
       padding: 5px 12px; margin-bottom: 20px;
@@ -287,7 +287,7 @@
     .insight-card:hover { background: #0d0d0d; }
     .insight-num {
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; letter-spacing: 0.12em;
+      color: #3ecfff; letter-spacing: 0.12em;
       margin-bottom: 12px;
     }
     .insight-title {
@@ -306,7 +306,7 @@
     .decision-item:first-child { border-top: 1px solid #1c1c1c; }
     .decision-num {
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; letter-spacing: 0.1em;
+      color: #3ecfff; letter-spacing: 0.1em;
       padding-top: 4px; flex-shrink: 0;
     }
     .decision-content {}
@@ -327,12 +327,12 @@
     /* ── PIVOT CALLOUT ── */
     .pivot-callout {
       background: #0d0d0d; border: 1px solid #1c1c1c;
-      border-left: 3px solid #c8b89a;
+      border-left: 3px solid #3ecfff;
       padding: 32px 36px; margin: 48px 0;
     }
     .pivot-callout-label {
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; letter-spacing: 0.14em;
+      color: #3ecfff; letter-spacing: 0.14em;
       text-transform: uppercase; margin-bottom: 12px;
     }
     .pivot-callout-text {
@@ -392,7 +392,7 @@
       font-family: 'Playfair Display', serif;
       font-size: clamp(32px, 4vw, 52px);
       font-weight: 700; font-style: italic;
-      color: #c8b89a; line-height: 1;
+      color: #3ecfff; line-height: 1;
       margin-bottom: 8px;
     }
     .outcome-label { font-size: 12px; color: #8a8a87; line-height: 1.5; }
@@ -417,7 +417,7 @@
     .motion-frame img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
     .motion-label {
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #3ecfff; letter-spacing: 0.12em; text-transform: uppercase;
       margin-bottom: 12px;
     }
     .motion-ae-badge {
@@ -436,7 +436,7 @@
     .cta-row { display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap; }
     .btn-primary {
       font-family: 'DM Mono', monospace; font-size: 11px;
-      color: #080808; background: #c8b89a;
+      color: #080808; background: #3ecfff;
       padding: 13px 24px; letter-spacing: 0.1em; text-transform: uppercase;
       transition: transform 0.15s, box-shadow 0.15s;
       box-shadow: 4px 4px 0 rgba(200,184,154,0.2);
@@ -465,7 +465,7 @@
       color: #484844; letter-spacing: 0.08em; text-transform: uppercase;
       transition: color 0.2s;
     }
-    .footer-nav a:hover { color: #c8b89a; }
+    .footer-nav a:hover { color: #3ecfff; }
     .footer-copy {
       font-family: 'DM Mono', monospace; font-size: 11px;
       color: #333; letter-spacing: 0.06em;
@@ -474,7 +474,7 @@
     /* ── UTILITIES ── */
     .tag {
       font-family: 'DM Mono', monospace; font-size: 10px;
-      color: #c8b89a; background: rgba(200,184,154,0.06);
+      color: #3ecfff; background: rgba(200,184,154,0.06);
       border: 1px solid rgba(200,184,154,0.16);
       padding: 3px 10px; letter-spacing: 0.07em; text-transform: uppercase;
     }
@@ -740,12 +740,12 @@
             <div class="meta-label" style="margin-bottom: 16px;">Two users. One platform.</div>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 16px;">
               <div>
-                <div style="font-size:13px; font-weight:700; color:#f0ede8; margin-bottom:6px;">The Creator</div>
-                <div style="font-size:12px; color:#8a8a87; line-height:1.7;">Founders, investors, traders, researchers — anyone with deep expertise who wants to scale their knowledge without scaling their time.</div>
+                <div style="font-size:14px; font-weight:700; color:#f0ede8; margin-bottom:6px;">The Creator</div>
+                <div style="font-size:13px; color:#8a8a87; line-height:1.7;">Founders, investors, traders, researchers — anyone with deep expertise who wants to scale their knowledge without scaling their time.</div>
               </div>
               <div>
-                <div style="font-size:13px; font-weight:700; color:#f0ede8; margin-bottom:6px;">The Consumer</div>
-                <div style="font-size:12px; color:#8a8a87; line-height:1.7;">People who want nuanced, expert-level answers — not generic AI. They want Cobie's take on DeFi, not ChatGPT's.</div>
+                <div style="font-size:14px; font-weight:700; color:#f0ede8; margin-bottom:6px;">The Consumer</div>
+                <div style="font-size:13px; color:#8a8a87; line-height:1.7;">People who want nuanced, expert-level answers — not generic AI. They want Cobie's take on DeFi, not ChatGPT's.</div>
               </div>
             </div>
           </div>
@@ -943,7 +943,7 @@
       <div style="display:grid; grid-template-columns: 1fr 2fr; gap: 64px; align-items: start;">
         <div class="reveal-left">
           <h2 class="section-heading" style="font-size:clamp(22px,2.8vw,36px);">Five calls that<br>shaped the<br><em>final product.</em></h2>
-          <p class="section-body mt-16" style="font-size:13px;">Design is mostly about what you don't build. Here are the decisions that mattered most.</p>
+          <p class="section-body mt-16" style="font-size:14px;">Design is mostly about what you don't build. Here are the decisions that mattered most.</p>
         </div>
         <div class="reveal-right">
           <div class="decision-list">
@@ -1013,54 +1013,125 @@
         <div class="reveal-right">
           <div class="pipeline">
             <div class="pipeline-inner">
-              <div style="font-family:'DM Mono',monospace; font-size:11px; color:#484844; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:24px;">Memory Generation Pipeline</div>
+              <div style="font-family:'DM Mono',monospace; font-size:11px; color:#a8a8a4; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:20px;">Memory Generation Pipeline</div>
 
-              <div class="pipeline-row">
-                <div class="pipeline-node accent">
-                  <div class="pipeline-node-title">Multi-Modal Ingestion</div>
-                  <div class="pipeline-node-sub">PDF · CSV · Images · Twitter · Telegram · Substack</div>
-                </div>
-              </div>
-              <div class="pipeline-row" style="padding-left:24px;">
-                <div class="pipeline-arrow">↓</div>
-              </div>
-              <div class="pipeline-row" style="gap:8px; flex-wrap:wrap;">
-                <div class="pipeline-node">
-                  <div class="pipeline-node-title">Content Normalisation</div>
-                  <div class="pipeline-node-sub">OCR · Parsing · Chunking</div>
-                </div>
-                <div class="pipeline-arrow">→</div>
-                <div class="pipeline-node">
-                  <div class="pipeline-node-title">Personality Engine</div>
-                  <div class="pipeline-node-sub">Stance · Trait Mapping</div>
-                </div>
-                <div class="pipeline-arrow">→</div>
-                <div class="pipeline-node">
-                  <div class="pipeline-node-title">Memory Synthesis</div>
-                  <div class="pipeline-node-sub">Scoring · Context</div>
-                </div>
-              </div>
-              <div class="pipeline-row" style="padding-left:24px;">
-                <div class="pipeline-arrow">↓</div>
-              </div>
-              <div class="pipeline-row" style="gap:8px; flex-wrap:wrap;">
-                <div class="pipeline-node green">
-                  <div class="pipeline-node-title">Vector Store</div>
-                  <div class="pipeline-node-sub">Semantic Embeddings</div>
-                </div>
-                <div class="pipeline-node green">
-                  <div class="pipeline-node-title">Relational DB</div>
-                  <div class="pipeline-node-sub">Mind Profiles</div>
-                </div>
-                <div class="pipeline-node green">
-                  <div class="pipeline-node-title">Cache Layer</div>
-                  <div class="pipeline-node-sub">Hot Memory</div>
-                </div>
-              </div>
-              <div style="margin-top:20px; padding-top:16px; border-top:1px solid #1c1c1c;">
-                <div style="font-family:'DM Mono',monospace; font-size:10px; color:#484844; letter-spacing:0.08em;">
-                  Powered by <span style="color:#8a8a87;">Google Gemini</span> · Built on <span style="color:#8a8a87;">Base</span> · x402 payments
-                </div>
+              <svg viewBox="0 0 520 320" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto;">
+                <defs>
+                  <marker id="pipe-arr" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+                    <polygon points="0,0 8,3.5 0,7" fill="#585854"/>
+                  </marker>
+                  <marker id="pipe-arr-accent" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+                    <polygon points="0,0 8,3.5 0,7" fill="#3ecfff"/>
+                  </marker>
+                  <marker id="pipe-arr-green" markerWidth="8" markerHeight="8" refX="7" refY="3.5" orient="auto">
+                    <polygon points="0,0 8,3.5 0,7" fill="#5ec974"/>
+                  </marker>
+                </defs>
+
+                <!-- ── ROW 1: Ingestion sources ── -->
+                <!-- Document Upload -->
+                <rect x="0" y="0" width="148" height="52" fill="#111" stroke="#303030" stroke-width="1.5"/>
+                <text x="10" y="18" font-family="DM Mono,monospace" font-size="9.5" fill="#3ecfff" font-weight="400">Document Upload API</text>
+                <text x="10" y="32" font-family="DM Mono,monospace" font-size="8" fill="#585854">PDF · CSV · Images · Text</text>
+                <text x="10" y="44" font-family="DM Mono,monospace" font-size="8" fill="#585854">Cron Schedulers</text>
+
+                <!-- Social Crawlers -->
+                <rect x="160" y="0" width="148" height="52" fill="#111" stroke="#303030" stroke-width="1.5"/>
+                <text x="170" y="18" font-family="DM Mono,monospace" font-size="9.5" fill="#3ecfff">Social Media Crawlers</text>
+                <text x="170" y="32" font-family="DM Mono,monospace" font-size="8" fill="#585854">Twitter · Telegram · Substack</text>
+                <text x="170" y="44" font-family="DM Mono,monospace" font-size="8" fill="#585854">Real-time Sync</text>
+
+                <!-- Bracket label -->
+                <line x1="0" y1="-6" x2="308" y2="-6" stroke="#242424" stroke-width="1"/>
+                <text x="154" y="-10" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#585854" letter-spacing="0.1em">MULTI-MODAL INGESTION</text>
+
+                <!-- Arrows down to AI Pipeline -->
+                <line x1="74" y1="52" x2="74" y2="80" stroke="#585854" stroke-width="1.2" marker-end="url(#pipe-arr)"/>
+                <line x1="234" y1="52" x2="234" y2="80" stroke="#585854" stroke-width="1.2" marker-end="url(#pipe-arr)"/>
+                <!-- Merge line -->
+                <line x1="74" y1="66" x2="234" y2="66" stroke="#585854" stroke-width="1.2"/>
+
+                <!-- ── ROW 2: AI Processing (3 steps) ── -->
+                <!-- Content Normalisation -->
+                <rect x="0" y="80" width="148" height="52" fill="#0d0d0d" stroke="#242424" stroke-width="1.5"/>
+                <rect x="0" y="80" width="3" height="52" fill="#3ecfff" opacity="0.5"/>
+                <text x="12" y="100" font-family="DM Mono,monospace" font-size="9.5" fill="#f4f1ec">Content Normalisation</text>
+                <text x="12" y="114" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">OCR · Parsing · Chunking</text>
+
+                <!-- Arrow right -->
+                <line x1="148" y1="106" x2="168" y2="106" stroke="#3ecfff" stroke-width="1.2" marker-end="url(#pipe-arr-accent)" opacity="0.7"/>
+
+                <!-- Personality Engine -->
+                <rect x="0" y="80" width="148" height="52" fill="#0d0d0d" stroke="#242424" stroke-width="1.5" transform="translate(172,0)"/>
+                <rect x="172" y="80" width="3" height="52" fill="#3ecfff" opacity="0.5"/>
+                <text x="184" y="100" font-family="DM Mono,monospace" font-size="9.5" fill="#f4f1ec">Personality Engine</text>
+                <text x="184" y="114" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">Stance · Trait Mapping</text>
+                <text x="184" y="125" font-family="DM Mono,monospace" font-size="7" fill="#585854">11 Dimensions</text>
+
+                <!-- Arrow right -->
+                <line x1="320" y1="106" x2="340" y2="106" stroke="#3ecfff" stroke-width="1.2" marker-end="url(#pipe-arr-accent)" opacity="0.7"/>
+
+                <!-- Memory Synthesis -->
+                <rect x="344" y="80" width="148" height="52" fill="#0d0d0d" stroke="#242424" stroke-width="1.5"/>
+                <rect x="344" y="80" width="3" height="52" fill="#3ecfff" opacity="0.5"/>
+                <text x="356" y="100" font-family="DM Mono,monospace" font-size="9.5" fill="#f4f1ec">Memory Synthesis</text>
+                <text x="356" y="114" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">Importance Scoring</text>
+                <text x="356" y="125" font-family="DM Mono,monospace" font-size="7" fill="#585854">Context Linking</text>
+
+                <!-- AI label -->
+                <text x="240" y="76" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854" letter-spacing="0.1em">AI PROCESSING — POWERED BY GEMINI</text>
+
+                <!-- Arrows down to storage -->
+                <line x1="74" y1="132" x2="74" y2="168" stroke="#585854" stroke-width="1.2" marker-end="url(#pipe-arr)"/>
+                <line x1="246" y1="132" x2="246" y2="168" stroke="#585854" stroke-width="1.2" marker-end="url(#pipe-arr)"/>
+                <line x1="418" y1="132" x2="418" y2="168" stroke="#585854" stroke-width="1.2" marker-end="url(#pipe-arr)"/>
+
+                <!-- ── ROW 3: Storage layer ── -->
+                <!-- Vector Store -->
+                <rect x="0" y="168" width="148" height="58" fill="#060e0d" stroke="#2a4a3a" stroke-width="1.5"/>
+                <rect x="0" y="168" width="148" height="4" fill="#5ec974" opacity="0.3"/>
+                <text x="10" y="188" font-family="DM Mono,monospace" font-size="10" fill="#5ec974">Vector Store</text>
+                <text x="10" y="202" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">Semantic Embeddings</text>
+                <text x="10" y="214" font-family="DM Mono,monospace" font-size="8" fill="#585854">Temporal Indexing</text>
+
+                <!-- Relational DB -->
+                <rect x="172" y="168" width="148" height="58" fill="#060e0d" stroke="#2a4a3a" stroke-width="1.5"/>
+                <rect x="172" y="168" width="148" height="4" fill="#5ec974" opacity="0.3"/>
+                <text x="182" y="188" font-family="DM Mono,monospace" font-size="10" fill="#5ec974">Relational DB</text>
+                <text x="182" y="202" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">Mind Profiles</text>
+                <text x="182" y="214" font-family="DM Mono,monospace" font-size="8" fill="#585854">Relationships</text>
+
+                <!-- Cache Layer -->
+                <rect x="344" y="168" width="148" height="58" fill="#060e0d" stroke="#2a4a3a" stroke-width="1.5"/>
+                <rect x="344" y="168" width="148" height="4" fill="#5ec974" opacity="0.3"/>
+                <text x="354" y="188" font-family="DM Mono,monospace" font-size="10" fill="#5ec974">Cache Layer</text>
+                <text x="354" y="202" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4">Hot Memory</text>
+                <text x="354" y="214" font-family="DM Mono,monospace" font-size="8" fill="#585854">Query Optimisation</text>
+
+                <!-- Storage label -->
+                <text x="246" y="162" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854" letter-spacing="0.1em">PROPRIETARY MEMORY ARCHITECTURE</text>
+
+                <!-- Arrows down to outputs -->
+                <line x1="74" y1="226" x2="74" y2="258" stroke="#5ec974" stroke-width="1.2" marker-end="url(#pipe-arr-green)" opacity="0.7"/>
+                <line x1="246" y1="226" x2="246" y2="258" stroke="#5ec974" stroke-width="1.2" marker-end="url(#pipe-arr-green)" opacity="0.7"/>
+                <line x1="418" y1="226" x2="418" y2="258" stroke="#5ec974" stroke-width="1.2" marker-end="url(#pipe-arr-green)" opacity="0.7"/>
+
+                <!-- ── ROW 4: Outputs ── -->
+                <rect x="12" y="258" width="124" height="40" fill="#0a0a0a" stroke="#242424" stroke-width="1"/>
+                <text x="74" y="276" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" fill="#a8a8a4">Memory Network</text>
+                <text x="74" y="289" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">Cross-Referenced Knowledge</text>
+
+                <rect x="184" y="258" width="124" height="40" fill="#0a0a0a" stroke="#242424" stroke-width="1"/>
+                <text x="246" y="276" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" fill="#a8a8a4">Mind Artifacts</text>
+                <text x="246" y="289" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">Structured Outputs</text>
+
+                <rect x="356" y="258" width="124" height="40" fill="#0a0a0a" stroke="#242424" stroke-width="1"/>
+                <text x="418" y="276" text-anchor="middle" font-family="DM Mono,monospace" font-size="9" fill="#a8a8a4">Personality Matrix</text>
+                <text x="418" y="289" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">11 Distinct Dimensions</text>
+              </svg>
+
+              <div style="margin-top:16px; padding-top:14px; border-top:1px solid #242424; font-family:'DM Mono',monospace; font-size:10px; color:#585854; letter-spacing:0.08em;">
+                Powered by <span style="color:#a8a8a4;">Google Gemini</span> &nbsp;·&nbsp; Built on <span style="color:#a8a8a4;">Base</span> &nbsp;·&nbsp; x402 micropayments &nbsp;·&nbsp; USDC to creator wallet
               </div>
             </div>
           </div>
@@ -1068,16 +1139,16 @@
           <!-- Components highlight -->
           <div style="margin-top:16px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
             <div style="border:1px solid #1c1c1c; padding:16px;">
-              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#c8b89a; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Source types</div>
-              <div style="font-size:12px; color:#8a8a87; line-height:1.6;">X · Substack · Telegram · YouTube · Notion · Google Drive · Voice · Files</div>
+              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#3ecfff; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Source types</div>
+              <div style="font-size:13px; color:#8a8a87; line-height:1.6;">X · Substack · Telegram · YouTube · Notion · Google Drive · Voice · Files</div>
             </div>
             <div style="border:1px solid #1c1c1c; padding:16px;">
-              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#c8b89a; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Personality</div>
-              <div style="font-size:12px; color:#8a8a87; line-height:1.6;">11 distinct dimensions extracted from content</div>
+              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#3ecfff; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Personality</div>
+              <div style="font-size:13px; color:#8a8a87; line-height:1.6;">11 distinct dimensions extracted from content</div>
             </div>
             <div style="border:1px solid #1c1c1c; padding:16px;">
-              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#c8b89a; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Payment</div>
-              <div style="font-size:12px; color:#8a8a87; line-height:1.6;">x402 micropayments. USDC. Instant to creator.</div>
+              <div style="font-family:'DM Mono',monospace; font-size:9px; color:#3ecfff; letter-spacing:0.1em; margin-bottom:6px; text-transform:uppercase;">Payment</div>
+              <div style="font-size:13px; color:#8a8a87; line-height:1.6;">x402 micropayments. USDC. Instant to creator.</div>
             </div>
           </div>
         </div>
@@ -1101,8 +1172,8 @@
         <div class="motion-strip-left">
           <div class="motion-label">Launch Video &mdash; After Effects</div>
           <h3 style="font-family:'Playfair Display',serif; font-size:clamp(20px,2.5vw,28px); font-weight:700; line-height:1.2; color:#f0ede8; margin-bottom:16px;">48 hours.<br>External team failed.<br><em>I shipped it anyway.</em></h3>
-          <p style="font-size:14px; color:#8a8a87; line-height:1.8; margin-bottom:12px;">The external video editing team we'd hired for the alpha launch couldn't deliver — 48 hours before the deadline. I stepped in and produced the motion graphics myself in After Effects.</p>
-          <p style="font-size:14px; color:#8a8a87; line-height:1.8;">Title card sequences, UI screen reveals, animated data visualisations, timed to the voiceover. The video went out on launch day as planned. On time. It's still live.</p>
+          <p style="font-size:15px; color:#8a8a87; line-height:1.8; margin-bottom:12px;">The external video editing team we'd hired for the alpha launch couldn't deliver — 48 hours before the deadline. I stepped in and produced the motion graphics myself in After Effects.</p>
+          <p style="font-size:15px; color:#8a8a87; line-height:1.8;">Title card sequences, UI screen reveals, animated data visualisations, timed to the voiceover. The video went out on launch day as planned. On time. It's still live.</p>
           <div class="motion-ae-badge">
             <span class="ae-icon">Ae</span>
             After Effects · Motion Graphics · 48hr delivery
@@ -1165,16 +1236,16 @@
           <div style="border:1px solid #1c1c1c; padding:28px;">
             <div class="meta-label" style="margin-bottom:16px;">Investors &amp; angels</div>
             <div style="display:flex; flex-direction:column; gap:12px;">
-              <div style="font-size:13px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Virtuals VC</strong>Lead investor, $250K raised</div>
-              <div style="font-size:13px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Citrea Co-founders</strong>Orkun &amp; Murat — Angels</div>
-              <div style="font-size:13px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Kevin Habits — YC W11</strong>Angel investor</div>
-              <div style="font-size:13px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Paul Taylor — ex-BlackRock</strong>Angel investor</div>
-              <div style="font-size:13px; color:#8a8a87; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Bowen Li — ex-Apple ML Lead</strong>Team advisor</div>
+              <div style="font-size:14px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Virtuals VC</strong>Lead investor, $250K raised</div>
+              <div style="font-size:14px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Citrea Co-founders</strong>Orkun &amp; Murat — Angels</div>
+              <div style="font-size:14px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Kevin Habits — YC W11</strong>Angel investor</div>
+              <div style="font-size:14px; color:#8a8a87; padding-bottom:12px; border-bottom:1px solid #1c1c1c; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Paul Taylor — ex-BlackRock</strong>Angel investor</div>
+              <div style="font-size:14px; color:#8a8a87; line-height:1.5;"><strong style="color:#f0ede8; display:block; margin-bottom:2px;">Bowen Li — ex-Apple ML Lead</strong>Team advisor</div>
             </div>
           </div>
           <div style="border:1px solid #1c1c1c; border-top:none; padding:20px;">
             <div class="meta-label" style="margin-bottom:8px;">Best performing tweet</div>
-            <div style="font-size:13px; color:#8a8a87; line-height:1.7; font-style:italic;">"Users can now create Minds on Qurios using any X account and/or Substack blog…"</div>
+            <div style="font-size:14px; color:#8a8a87; line-height:1.7; font-style:italic;">"Users can now create Minds on Qurios using any X account and/or Substack blog…"</div>
             <div style="font-family:'DM Mono',monospace; font-size:10px; color:#50b969; margin-top:8px;">3,344 views · 39 likes · 7 reposts · 5 replies</div>
           </div>
         </div>
@@ -1201,8 +1272,8 @@
             <div class="meta-label" style="margin-bottom:20px;">Next case study</div>
             <div style="font-family:'DM Mono',monospace; font-size:10px; color:#484844; margin-bottom:12px; letter-spacing:0.1em;">003</div>
             <h3 style="font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:#f0ede8; margin-bottom:8px; line-height:1.2;">EVM Wheels</h3>
-            <p style="font-size:13px; color:#8a8a87; margin-bottom:20px; line-height:1.7;">EV rental platform. Rebuilt the booking flow. Checkout time dropped 40%.</p>
-            <a href="evm-wheels.html" style="font-family:'DM Mono',monospace; font-size:11px; color:#c8b89a; letter-spacing:0.1em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(200,184,154,0.2); padding:10px 18px; transition:background 0.2s;" onmouseover="this.style.background='rgba(200,184,154,0.05)'" onmouseout="this.style.background='transparent'">View case study →</a>
+            <p style="font-size:14px; color:#8a8a87; margin-bottom:20px; line-height:1.7;">EV rental platform. Rebuilt the booking flow. Checkout time dropped 40%.</p>
+            <a href="evm-wheels.html" style="font-family:'DM Mono',monospace; font-size:11px; color:#3ecfff; letter-spacing:0.1em; text-transform:uppercase; display:inline-flex; align-items:center; gap:8px; border:1px solid rgba(200,184,154,0.2); padding:10px 18px; transition:background 0.2s;" onmouseover="this.style.background='rgba(200,184,154,0.05)'" onmouseout="this.style.background='transparent'">View case study →</a>
           </div>
         </div>
       </div>

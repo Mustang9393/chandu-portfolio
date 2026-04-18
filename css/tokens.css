@@ -11,20 +11,20 @@
   --bg-surface:   #141414;
   --bg-hover:     #1a1a1a;
 
-  --border:       #1c1c1c;
-  --border-mid:   #282828;
-  --border-light: #333333;
+  --border:       #242424;
+  --border-mid:   #303030;
+  --border-light: #3a3a3a;
 
-  --text-primary:   #f0ede8;   /* 16.5:1 on bg ✅ */
-  --text-secondary: #8a8a87;   /* 5.78:1 on bg ✅ */
-  --text-tertiary:  #484844;   /* decorative only */
+  --text-primary:   #f4f1ec;   /* 17.2:1 on bg ✅ */
+  --text-secondary: #a8a8a4;   /* 7.9:1 on bg ✅ — bumped from #8a8a87 */
+  --text-tertiary:  #585854;   /* decorative — bumped from #484844 */
 
-  --accent:       #c8b89a;     /* 10.28:1 on bg ✅ */
-  --accent-warm:  #e8d5b7;     /* 13.95:1 on bg ✅ */
-  --accent-dim:   rgba(200, 184, 154, 0.08);
-  --accent-border: rgba(200, 184, 154, 0.18);
+  --accent:       #3ecfff;     /* 11.2:1 on bg ✅ — neon blue */
+  --accent-warm:  #80dfff;     /* 14.1:1 on bg ✅ */
+  --accent-dim:   rgba(62, 207, 255, 0.07);
+  --accent-border: rgba(62, 207, 255, 0.2);
 
-  --green:        #50b969;     /* 8.09:1 on bg ✅ */
+  --green:        #5ec974;     /* 8.9:1 on bg ✅ */
 
   /* ── Typography ── */
   --font-serif:  'Playfair Display', Georgia, serif;
@@ -32,14 +32,14 @@
   --font-mono:   'DM Mono', monospace;
 
   /* ── Type Scale ── */
-  --text-xs:   11px;
-  --text-sm:   13px;
-  --text-base: 15px;
-  --text-lg:   18px;
-  --text-xl:   clamp(20px, 2.2vw, 26px);
-  --text-2xl:  clamp(28px, 3.5vw, 40px);
-  --text-3xl:  clamp(40px, 5.5vw, 64px);
-  --text-hero: clamp(72px, 11vw, 128px);
+  --text-xs:   12px;
+  --text-sm:   14px;
+  --text-base: 16px;
+  --text-lg:   20px;
+  --text-xl:   clamp(22px, 2.4vw, 28px);
+  --text-2xl:  clamp(30px, 3.8vw, 44px);
+  --text-3xl:  clamp(44px, 5.8vw, 68px);
+  --text-hero: clamp(76px, 11.5vw, 132px);
 
   /* ── Spacing ── */
   --space-xs:  8px;
