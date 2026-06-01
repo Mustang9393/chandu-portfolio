@@ -1,0 +1,626 @@
+/* ============================================
+   HOME-REDESIGN.CSS
+   Reference-inspired light homepage
+   ============================================ */
+
+:root {
+  --home-bg: #ffffff;
+  --home-ink: #252525;
+  --home-muted: #545454;
+  --home-soft: #888888;
+  --home-line: #dedede;
+  --home-panel: #e8e8e8;
+  --home-panel-deep: #c4c4c4;
+  --home-red: #d95050;
+  --home-red-deep: #c25353;
+  --home-black: #171717;
+
+  --home-gutter: clamp(20px, 5vw, 72px);
+  --home-radius: 0px;
+  --home-ease: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+body {
+  background: var(--home-bg);
+  color: var(--home-ink);
+  font-family: "Open Sans", Inter, system-ui, sans-serif;
+}
+
+.home-page {
+  min-height: 100svh;
+  background:
+    linear-gradient(90deg, rgba(222, 222, 222, 0.42) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(222, 222, 222, 0.42) 1px, transparent 1px),
+    var(--home-bg);
+  background-size: 48px 48px;
+}
+
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 72px;
+  padding: 0 var(--home-gutter);
+  background: rgba(255, 255, 255, 0.86);
+  border-bottom: 1px solid var(--home-line);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.site-mark-glyph {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  color: #fff;
+  background: var(--home-red);
+  border-radius: 50%;
+  font-weight: 800;
+  transition: transform 420ms var(--home-ease);
+}
+
+.site-mark:hover .site-mark-glyph {
+  transform: rotate(18deg) scale(1.06);
+}
+
+.site-links {
+  display: flex;
+  align-items: center;
+  gap: clamp(16px, 3vw, 36px);
+  color: var(--home-muted);
+  font-size: 14px;
+}
+
+.site-links a {
+  position: relative;
+  transition: color 180ms ease;
+}
+
+.site-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  height: 1px;
+  background: var(--home-red);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 240ms var(--home-ease);
+}
+
+.site-links a:hover {
+  color: var(--home-red-deep);
+}
+
+.site-links a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  gap: clamp(36px, 7vw, 96px);
+  min-height: calc(100svh - 72px);
+  padding: clamp(52px, 8vw, 112px) var(--home-gutter) 56px;
+  align-items: end;
+}
+
+.hero-copy {
+  max-width: 780px;
+}
+
+.hero-kicker,
+.section-kicker,
+.project-index,
+.project-tags,
+.availability,
+.logo-grid-caption,
+.footer-copy {
+  font-family: "DM Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-kicker {
+  color: var(--home-red-deep);
+  margin-bottom: 28px;
+}
+
+.hero-title {
+  max-width: 820px;
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(64px, 12vw, 178px);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.78;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-title .outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--home-red);
+}
+
+.hero-summary {
+  max-width: 620px;
+  margin-top: 32px;
+  color: var(--home-muted);
+  font-size: clamp(18px, 2.2vw, 28px);
+  line-height: 1.35;
+  letter-spacing: -0.03em;
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 52px;
+  background: var(--home-line);
+  border: 1px solid var(--home-line);
+}
+
+.hero-meta-item {
+  min-height: 92px;
+  padding: 18px;
+  background: var(--home-bg);
+}
+
+.meta-label {
+  margin-bottom: 10px;
+  color: var(--home-soft);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.meta-value {
+  color: var(--home-ink);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.logo-field {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 560px;
+}
+
+.logo-grid-wrap {
+  background: var(--home-red);
+  color: #fff;
+  padding: clamp(14px, 2vw, 24px);
+  overflow: hidden;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(42px, 1fr));
+  gap: clamp(8px, 1.4vw, 16px);
+}
+
+.logo-cell {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  color: #fff;
+  background: rgba(255, 255, 255, 0.02);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 58px);
+  font-weight: 600;
+  letter-spacing: -0.08em;
+  line-height: 1;
+  transform: rotate(var(--logo-rotate, 0deg)) scale(var(--logo-scale, 1));
+  transition:
+    transform 520ms var(--home-ease),
+    background 220ms ease,
+    border-color 220ms ease;
+  will-change: transform;
+}
+
+.logo-cell.is-near {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.72);
+}
+
+.logo-grid-caption {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+  color: var(--home-muted);
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 24px;
+  color: var(--home-red-deep);
+}
+
+.availability::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--home-red);
+  border-radius: 50%;
+  animation: home-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes home-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.38; transform: scale(0.78); }
+}
+
+.statement {
+  padding: clamp(80px, 11vw, 150px) var(--home-gutter);
+  border-top: 1px solid var(--home-line);
+  border-bottom: 1px solid var(--home-line);
+}
+
+.statement h2 {
+  max-width: 1120px;
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(36px, 7vw, 104px);
+  font-weight: 600;
+  letter-spacing: -0.065em;
+  line-height: 0.95;
+}
+
+.statement h2 span {
+  color: var(--home-red);
+}
+
+.work-section,
+.systems-section,
+.about-section {
+  padding: clamp(72px, 9vw, 120px) var(--home-gutter);
+}
+
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--home-line);
+  padding-bottom: 18px;
+}
+
+.section-head h2 {
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(34px, 5vw, 76px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.section-kicker {
+  color: var(--home-red-deep);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: clamp(22px, 3vw, 36px);
+  color: var(--home-ink);
+  background: linear-gradient(180deg, var(--home-panel), var(--home-panel-deep));
+  isolation: isolate;
+}
+
+.project-card.featured {
+  grid-column: span 2;
+  min-height: 620px;
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.06)),
+    var(--project-image, none);
+  background-size: cover;
+  background-position: center;
+  opacity: 0.82;
+  filter: saturate(0.88);
+  transform: scale(1.01);
+  transition:
+    transform 700ms var(--home-ease),
+    filter 700ms var(--home-ease),
+    opacity 700ms var(--home-ease);
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.64) 46%, rgba(255, 255, 255, 0.88));
+}
+
+.project-card:hover::before {
+  transform: scale(1.055);
+  filter: saturate(1);
+  opacity: 1;
+}
+
+.project-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.project-index {
+  color: var(--home-red-deep);
+}
+
+.project-tags {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+  max-width: 55%;
+  color: var(--home-muted);
+}
+
+.project-tags span {
+  padding: 5px 9px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(37, 37, 37, 0.1);
+}
+
+.project-title {
+  max-width: 720px;
+  margin-bottom: 16px;
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(42px, 6vw, 104px);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.88;
+}
+
+.project-card:not(.featured) .project-title {
+  font-size: clamp(34px, 4.4vw, 68px);
+}
+
+.project-desc {
+  max-width: 520px;
+  color: var(--home-muted);
+  font-size: clamp(16px, 1.5vw, 20px);
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.project-arrow {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  color: #fff;
+  background: var(--home-red);
+  border-radius: 50%;
+  font-family: "DM Mono", ui-monospace, monospace;
+  transition: transform 280ms var(--home-ease), background 180ms ease;
+}
+
+.project-card:hover .project-arrow {
+  transform: rotate(45deg) scale(1.08);
+  background: var(--home-black);
+}
+
+.systems-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border: 1px solid var(--home-line);
+  background: var(--home-line);
+  gap: 1px;
+}
+
+.system-card {
+  min-height: 220px;
+  padding: 24px;
+  background: var(--home-bg);
+  transition: background 240ms ease, color 240ms ease;
+}
+
+.system-card:hover {
+  background: var(--home-red);
+  color: #fff;
+}
+
+.system-card strong {
+  display: block;
+  margin-bottom: 18px;
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.system-card p {
+  color: inherit;
+  font-size: 17px;
+  line-height: 1.42;
+  letter-spacing: -0.02em;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.6fr);
+  gap: clamp(36px, 8vw, 112px);
+  border-top: 1px solid var(--home-line);
+}
+
+.about-section h2 {
+  color: var(--home-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(40px, 6vw, 96px);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 0.92;
+}
+
+.about-section p {
+  color: var(--home-muted);
+  font-size: 18px;
+  line-height: 1.72;
+}
+
+.home-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 28px var(--home-gutter);
+  border-top: 1px solid var(--home-line);
+  color: var(--home-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a:hover {
+  color: var(--home-red-deep);
+}
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 800ms var(--home-ease),
+    transform 800ms var(--home-ease);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-cell,
+  [data-reveal],
+  .project-card::before,
+  .project-arrow,
+  .site-mark-glyph {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .site-nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 18px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+
+  .site-links {
+    width: 100%;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .home-hero,
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .logo-field {
+    min-height: auto;
+  }
+
+  .project-grid,
+  .systems-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured {
+    grid-column: span 1;
+  }
+
+  .hero-meta {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .home-page {
+    background-size: 34px 34px;
+  }
+
+  .site-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .hero-title {
+    font-size: clamp(58px, 21vw, 96px);
+  }
+
+  .logo-grid {
+    grid-template-columns: repeat(4, minmax(44px, 1fr));
+  }
+
+  .logo-grid-caption,
+  .section-head,
+  .home-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-card,
+  .project-card.featured {
+    min-height: 460px;
+  }
+
+  .project-tags {
+    max-width: none;
+  }
+}

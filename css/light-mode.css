@@ -1,0 +1,433 @@
+/* ============================================
+   LIGHT-MODE.CSS - Minimal, creative light refresh
+   Chandu MP Portfolio
+   ============================================ */
+
+:root {
+  color-scheme: light;
+
+  --bg: #f7f4ee;
+  --bg-elevated: #fffdfa;
+  --bg-surface: #ece6dc;
+  --bg-hover: #fff7ea;
+
+  --border: #ded6c8;
+  --border-mid: #cfc4b3;
+  --border-light: #b7aa97;
+
+  --text-primary: #15120f;
+  --text-secondary: #5f574d;
+  --text-tertiary: #958978;
+
+  --accent: #ff5b2e;
+  --accent-warm: #8b3ff2;
+  --accent-dim: rgba(255, 91, 46, 0.09);
+  --accent-border: rgba(255, 91, 46, 0.24);
+
+  --green: #168a4a;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(247, 244, 238, 0.96) 32rem),
+    var(--bg) !important;
+  color: var(--text-primary) !important;
+}
+
+::selection {
+  background: rgba(255, 91, 46, 0.18);
+  color: var(--text-primary);
+}
+
+.cursor-dot {
+  background: var(--accent) !important;
+}
+
+.cursor-ring {
+  border-color: rgba(255, 91, 46, 0.32) !important;
+}
+
+body.cursor-hover .cursor-dot,
+body.ch .cursor-dot {
+  background: rgba(255, 91, 46, 0.12) !important;
+}
+
+body.cursor-hover .cursor-ring,
+body.ch .cursor-ring {
+  border-color: var(--accent) !important;
+}
+
+.nav,
+.cs-nav {
+  background: rgba(247, 244, 238, 0.84) !important;
+  border-bottom-color: var(--border) !important;
+  backdrop-filter: blur(18px) saturate(1.18) !important;
+  -webkit-backdrop-filter: blur(18px) saturate(1.18) !important;
+}
+
+.nav.scrolled {
+  background: rgba(247, 244, 238, 0.92) !important;
+}
+
+.hero,
+.hook,
+section,
+.origin,
+.work,
+.capabilities,
+.closer {
+  border-color: var(--border) !important;
+}
+
+.hero-bg {
+  background:
+    radial-gradient(ellipse 44% 36% at 78% 24%, rgba(255, 91, 46, 0.12), transparent 72%),
+    radial-gradient(ellipse 38% 34% at 18% 74%, rgba(139, 63, 242, 0.1), transparent 70%) !important;
+}
+
+.hero::before,
+.hero-grain {
+  opacity: 0.18 !important;
+  mix-blend-mode: multiply;
+}
+
+.hero-title,
+.hero-name-solid,
+.section-heading,
+.heading,
+.iteration-title,
+.phase-title,
+.origin-heading,
+.project-title,
+.capability-title,
+.closer-heading,
+.insight-title,
+.decision-title,
+.pain-title,
+.flow-title,
+.stack-tool,
+.outcome-label strong,
+.meta-value strong,
+.hook-pull-quote,
+.callout-text,
+.pivot-callout-text {
+  color: var(--text-primary) !important;
+}
+
+.hero-title em,
+.hero-name-ghost,
+.section-heading.ghost {
+  color: transparent !important;
+  -webkit-text-stroke: 1px rgba(21, 18, 15, 0.42) !important;
+}
+
+.hero-title em,
+.heading em,
+.section-heading em,
+.iteration-title em,
+.phase-title em,
+.origin-heading em,
+.hero-tagline em {
+  color: var(--accent) !important;
+  -webkit-text-stroke: 0 !important;
+}
+
+.hero-eyebrow,
+.meta-label,
+.meta-value,
+.section-label,
+.sec-label,
+.nav-logo,
+.nav-links a,
+.cs-nav-back,
+.cs-nav-title,
+.cs-nav-links a,
+.nav-cta,
+.body,
+.section-body,
+.hook-body,
+.hook-stat-label,
+.project-desc,
+.capability-desc,
+.insight-body,
+.decision-body,
+.pain-body,
+.flow-body,
+.stack-desc,
+.phone-label,
+.phone-sublabel,
+.screen-caption,
+.footer-nav a,
+.footer-copy,
+.work-header-count,
+.work-header-label {
+  color: var(--text-secondary) !important;
+}
+
+.hero-eyebrow::before,
+.section-rule,
+.sec-rule,
+.section-line,
+.divider {
+  background: var(--border) !important;
+}
+
+.section-num,
+.sec-num,
+.project-num::before,
+.capabilities-label::before,
+.iteration-label,
+.phase-label,
+.tag,
+.insight-num,
+.decision-num,
+.pain-num,
+.flow-num,
+.stack-role,
+.outcome-number,
+.outcome-num,
+.hook-stat-number,
+.callout-label,
+.pivot-callout-label,
+.motion-label {
+  color: var(--accent) !important;
+}
+
+.tag,
+.iteration-label,
+.phase-label,
+.decision-tag,
+.insight-tag {
+  background: var(--accent-dim) !important;
+  border-color: var(--accent-border) !important;
+}
+
+.marquee,
+.origin-quote,
+.project-thumb,
+.graphic-block,
+.capability,
+.callout,
+.pivot-callout,
+.pipeline,
+.app-mockup,
+.cat-pill,
+.next-project,
+.stack-list,
+.flow-steps,
+.outcome-row,
+.outcome-grid,
+.insight-grid,
+.pain-grid,
+.study-grid,
+.motion-strip,
+.phone-frame,
+.screen-frame,
+.project-featured:hover,
+.project-card:hover,
+.capability:hover,
+.insight-card:hover,
+.outcome-stat:hover,
+.stack-item:hover,
+.flow-step:hover,
+.pain-card:hover {
+  background: var(--bg-elevated) !important;
+  border-color: var(--border) !important;
+}
+
+.screen-frame,
+.phone-frame,
+.app-mockup,
+.pipeline,
+.motion-strip,
+.card-gallery img,
+section img[style*="border"] {
+  border: 1px solid var(--border) !important;
+  box-shadow: 0 24px 70px rgba(42, 34, 24, 0.11);
+}
+
+.screen-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 36px 0 16px !important;
+}
+
+.screen-frame--browser::before,
+.app-mockup-bar {
+  background: #ede5d9 !important;
+  border-bottom-color: var(--border) !important;
+}
+
+.screen-frame--browser::after {
+  color: #b7aa97 !important;
+}
+
+.screen-frame img {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.screen-grid-2,
+.screen-grid-3 {
+  grid-template-columns: 1fr !important;
+  gap: 36px !important;
+}
+
+.phone-row,
+.phone-row-2,
+.phone-row-3 {
+  grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+  gap: 32px !important;
+  max-width: 880px;
+}
+
+.phone-frame {
+  border-radius: 30px !important;
+  padding: 12px 8px !important;
+}
+
+.phone-frame::before {
+  background: var(--border-mid) !important;
+}
+
+.card-gallery {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 18px !important;
+}
+
+.project-featured,
+.project-card,
+.project-row,
+.hero-meta,
+.hero-meta-item,
+.meta-item,
+.section-header,
+.sec-header,
+.section-divider,
+.origin-left,
+.project-featured-left,
+.project-thumb,
+.graphic-strip,
+.graphic-block,
+.capabilities-grid,
+.capability,
+.cs-footer,
+.footer,
+.insight-card,
+.decision-item,
+.study-cell,
+.pain-card,
+.flow-step,
+.stack-item,
+.stack-role,
+.outcome-stat,
+.motion-strip-left {
+  border-color: var(--border) !important;
+}
+
+.btn-primary {
+  color: #fffdfa !important;
+  background: var(--text-primary) !important;
+  box-shadow: 4px 4px 0 rgba(255, 91, 46, 0.28) !important;
+}
+
+.btn-secondary,
+.arrow-btn {
+  border-color: var(--border-mid) !important;
+  color: var(--text-secondary) !important;
+}
+
+.btn-secondary:hover,
+.arrow-btn:hover,
+.nav-links a:hover,
+.cs-nav-back:hover,
+.cs-nav-links a:hover,
+.nav-cta:hover,
+.footer-nav a:hover {
+  color: var(--accent) !important;
+}
+
+.project-featured:hover .arrow-btn,
+.project-card:hover .arrow-btn {
+  border-color: var(--accent) !important;
+  color: var(--accent) !important;
+}
+
+.graphic-block-label {
+  background: rgba(247, 244, 238, 0.82) !important;
+  border-top-color: var(--border) !important;
+}
+
+.pipeline::before {
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(222, 214, 200, 0.65) 39px, rgba(222, 214, 200, 0.65) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(222, 214, 200, 0.65) 39px, rgba(222, 214, 200, 0.65) 40px) !important;
+}
+
+.pipeline-node,
+.motion-ae-badge,
+.cat-pill {
+  background: #fffdfa !important;
+  border-color: var(--border) !important;
+}
+
+.motion-strip-right {
+  background: #ece6dc !important;
+}
+
+svg rect[fill="#050d12"],
+svg rect[fill="#0a0a0a"],
+svg rect[fill="#0c0c0c"],
+svg rect[fill="#0d0d0d"],
+svg rect[fill="#111"],
+svg rect[fill="#000"] {
+  fill: #fffdfa !important;
+}
+
+svg text[fill="#f0ede8"],
+svg text[fill="#f4f1ec"],
+svg text[fill="#a8a8a4"] {
+  fill: #15120f !important;
+}
+
+svg text[fill="#8a8a87"],
+svg text[fill="#585854"],
+svg text[fill="#484844"],
+svg text[fill="#333"] {
+  fill: #5f574d !important;
+}
+
+svg line,
+svg path,
+svg rect {
+  stroke-opacity: 0.95;
+}
+
+@media (min-width: 960px) {
+  .container--wide {
+    max-width: 1440px !important;
+  }
+
+  .screen-frame {
+    margin-left: calc(clamp(24px, 5vw, 56px) * -0.45) !important;
+    margin-right: calc(clamp(24px, 5vw, 56px) * -0.45) !important;
+    width: calc(100% + clamp(24px, 5vw, 56px) * 0.9) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .phone-row,
+  .phone-row-2,
+  .phone-row-3,
+  .card-gallery {
+    grid-template-columns: 1fr !important;
+  }
+
+  .screen-frame {
+    border-radius: 8px;
+  }
+}

@@ -3,964 +3,252 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Chandu MP — Product Designer & Architect. I design AI-native products, design systems, and motion. Based in Bengaluru, India.">
-  <meta name="theme-color" content="#080808">
+  <meta name="description" content="Chandu MP - Product Designer & Architect. AI products, design systems, motion, and product strategy.">
+  <meta name="theme-color" content="#ffffff">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="Chandu MP — Designer">
-  <meta property="og:description" content="Product Designer & Architect. AI products, design systems, motion.">
+  <meta property="og:title" content="Chandu MP - Product Designer">
+  <meta property="og:description" content="Product Designer & Architect. AI products, design systems, motion, and strategy.">
   <meta property="og:type" content="website">
 
-  <title>Chandu MP — Designer</title>
+  <title>Chandu MP - Product Designer</title>
 
-  <!-- Styles -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter+Tight:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/home-redesign.css">
 </head>
 <body>
-
-  <!-- ── CUSTOM CURSOR ── -->
   <div class="cursor-dot" aria-hidden="true"></div>
   <div class="cursor-ring" aria-hidden="true"></div>
 
-  <!-- ── NAV ── -->
-  <nav class="nav" role="navigation" aria-label="Main navigation">
-    <div class="container">
-
-      <a href="/" class="nav-logo">
-        <span class="nav-logo-mark" aria-hidden="true"></span>
-        <strong>Chandu MP</strong> &mdash; Designer
+  <main class="home-page">
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="/" class="site-mark" aria-label="Chandu MP home">
+        <span class="site-mark-glyph">C</span>
+        <span>Chandu MP</span>
       </a>
 
-      <ul class="nav-links" role="list">
-        <li><a href="#work">Work</a></li>
-        <li><a href="#capabilities">System</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="mailto:chandu.mp.14l@gmail.com">Contact</a></li>
-      </ul>
-
-      <div class="nav-status" aria-label="Availability status">
-        <span class="nav-status-dot" aria-hidden="true"></span>
-        Open to work
+      <div class="site-links">
+        <a href="#work">Work</a>
+        <a href="#systems">Systems</a>
+        <a href="#about">About</a>
+        <a href="mailto:chandu.mp.14l@gmail.com">Contact</a>
       </div>
+    </nav>
 
-    </div>
-  </nav>
-
-  <!-- ── HERO ── -->
-  <section class="hero" aria-label="Introduction">
-
-    <!-- Scroll indicator -->
-    <div class="scroll-indicator" aria-hidden="true">
-      <span>Scroll</span>
-      <div class="scroll-indicator-line"></div>
-    </div>
-
-    <div class="container">
-
-      <!-- Eyebrow -->
-      <p class="hero-eyebrow" aria-hidden="true">
-        v2.0 &mdash; Bengaluru, India
-      </p>
-
-      <!-- Animated name -->
-      <div class="hero-name" aria-label="Chandu MP">
-        <div class="hero-name-line">
-          <div class="hero-name-solid" aria-hidden="true">
-            <span class="hero-char">C</span><span class="hero-char">H</span><span class="hero-char">A</span><span class="hero-char">N</span><span class="hero-char">D</span><span class="hero-char">U</span>
-          </div>
-          <div class="hero-name-ghost" aria-hidden="true">MP</div>
-        </div>
-      </div>
-
-      <!-- Bottom: tagline + specs -->
-      <div class="hero-bottom">
-
-        <p class="hero-tagline" data-parallax="0.08">
-          Most designers think in screens.<br>
-          I think in <em>systems.</em> Came from architecture.<br>
-          Stayed for the products.
+    <section class="home-hero" aria-label="Introduction">
+      <div class="hero-copy" data-reveal>
+        <p class="hero-kicker">Product Designer / Architect - Bengaluru, India</p>
+        <h1 class="hero-title" aria-label="Chandu MP">
+          <span>CHAN</span>
+          <span class="outline">DU MP</span>
+        </h1>
+        <p class="hero-summary">
+          I build thoughtful digital experiences from the ground up: AI-native products,
+          design systems, motion, and interfaces that feel sharp without shouting.
         </p>
 
-        <div class="hero-specs" role="list" aria-label="Quick facts">
-          <div class="hero-spec" role="listitem">
-            <span class="hero-spec-label">Status</span>
-            <span class="hero-spec-value"><span class="live">■ Available</span></span>
+        <div class="hero-meta" aria-label="Quick facts">
+          <div class="hero-meta-item">
+            <div class="meta-label">Background</div>
+            <div class="meta-value">Architecture to product design</div>
           </div>
-          <div class="hero-spec" role="listitem">
-            <span class="hero-spec-label">Background</span>
-            <span class="hero-spec-value">Architecture <span class="muted">→</span> Product</span>
+          <div class="hero-meta-item">
+            <div class="meta-label">Focus</div>
+            <div class="meta-value">AI, systems, Web3 UX, motion</div>
           </div>
-          <div class="hero-spec" role="listitem">
-            <span class="hero-spec-label">Focus</span>
-            <span class="hero-spec-value">AI · Systems · Motion</span>
-          </div>
-          <div class="hero-spec" role="listitem">
-            <span class="hero-spec-label">Last shipped</span>
-            <span class="hero-spec-value">Decision Disco <span class="muted">48h</span></span>
-          </div>
-          <div class="hero-spec" role="listitem">
-            <span class="hero-spec-label">Location</span>
-            <span class="hero-spec-value">Bengaluru <span class="muted">/ Remote</span></span>
+          <div class="hero-meta-item">
+            <div class="meta-label">Last shipped</div>
+            <div class="meta-value">Decision Disco in 48 hours</div>
           </div>
         </div>
 
+        <p class="availability">Open to work / remote friendly</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ── MARQUEE ── -->
-  <div class="marquee" aria-label="Skills and tools" role="marquee">
-    <div class="marquee-track" aria-hidden="true">
-      <span class="marquee-item">AI Product Design</span>
-      <span class="marquee-item">Design Systems</span>
-      <span class="marquee-item">Motion Design</span>
-      <span class="marquee-item">Architecture Background</span>
-      <span class="marquee-item">Web3 UX</span>
-      <span class="marquee-item">Vibe Coding</span>
-      <span class="marquee-item">Framer</span>
-      <span class="marquee-item">Figma</span>
-      <span class="marquee-item">After Effects</span>
-      <span class="marquee-item">AI Product Design</span>
-      <span class="marquee-item">Design Systems</span>
-      <span class="marquee-item">Motion Design</span>
-      <span class="marquee-item">Architecture Background</span>
-      <span class="marquee-item">Web3 UX</span>
-      <span class="marquee-item">Vibe Coding</span>
-      <span class="marquee-item">Framer</span>
-      <span class="marquee-item">Figma</span>
-      <span class="marquee-item">After Effects</span>
-    </div>
-  </div>
-
-  <!-- ── CHAPTER 01: ORIGIN ── -->
-  <div class="container">
-    <div class="section-divider reveal">
-      <span class="section-num">01</span>
-      <div class="section-line"></div>
-      <span class="section-diamond">◆</span>
-      <div class="section-line"></div>
-      <span class="section-title">Origin story</span>
-    </div>
-  </div>
-
-  <section class="origin" id="about" aria-labelledby="origin-heading">
-    <div class="container">
-      <div class="origin-grid">
-
-        <div class="origin-left reveal-left">
-          <h2 class="origin-heading" id="origin-heading">
-            Trained to design<br>
-            <em>buildings.</em><br>
-            Ended up designing<br>
-            products.
-          </h2>
-          <p class="origin-body">
-            Architecture school teaches you something most design courses skip:
-            <strong>how things are actually built.</strong>
-            Every decision has a consequence. Structure matters. Systems matter.
-            The person who eventually has to live in it matters most.
-          </p>
-          <br>
-          <p class="origin-body">
-            That thinking followed me into product. I don't just make screens look good —
-            I think about how they connect, how they scale, how they feel to the person
-            navigating them at 11pm on a slow connection.
-          </p>
-        </div>
-
-        <div class="origin-right reveal-right">
-          <!-- Floor plan → Product UI — side by side -->
-          <div class="arch-graphic" aria-hidden="true">
-            <svg viewBox="0 0 700 280" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
-              <defs>
-                <pattern id="fp-grid2" width="12" height="12" patternUnits="userSpaceOnUse">
-                  <path d="M12 0L0 0 0 12" fill="none" stroke="#0e1e26" stroke-width="0.5"/>
-                </pattern>
-              </defs>
-              <!-- LEFT: FLOOR PLAN -->
-              <rect x="0" y="0" width="320" height="280" fill="#050d12"/>
-              <rect x="0" y="0" width="320" height="280" fill="url(#fp-grid2)"/>
-              <rect x="4" y="4" width="312" height="272" fill="none" stroke="#1a3040" stroke-width="0.8"/>
-              <text x="10" y="16" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.5" letter-spacing="0.1em">FLOOR PLAN — 1:100</text>
-              <g transform="translate(24,24)">
-                <rect x="16" y="0" width="252" height="7" fill="#3ecfff" opacity="0.75"/>
-                <rect x="16" y="194" width="252" height="7" fill="#3ecfff" opacity="0.75"/>
-                <rect x="16" y="0" width="7" height="201" fill="#3ecfff" opacity="0.75"/>
-                <rect x="261" y="0" width="7" height="201" fill="#3ecfff" opacity="0.75"/>
-                <rect x="128" y="7" width="5" height="130" fill="#3ecfff" opacity="0.5"/>
-                <rect x="23" y="98" width="110" height="5" fill="#3ecfff" opacity="0.5"/>
-                <rect x="128" y="140" width="5" height="61" fill="#3ecfff" opacity="0.5"/>
-                <rect x="128" y="140" width="140" height="5" fill="#3ecfff" opacity="0.5"/>
-                <rect x="23" y="7" width="105" height="91" fill="#3ecfff" opacity="0.025"/>
-                <rect x="23" y="103" width="105" height="91" fill="#3ecfff" opacity="0.02"/>
-                <rect x="133" y="7" width="128" height="133" fill="#3ecfff" opacity="0.02"/>
-                <rect x="133" y="145" width="128" height="49" fill="#3ecfff" opacity="0.02"/>
-                <rect x="36" y="0" width="36" height="7" fill="#3ecfff" opacity="1"/>
-                <rect x="36" y="1" width="36" height="5" fill="#3ecfff" opacity="0.3"/>
-                <rect x="152" y="0" width="48" height="7" fill="#3ecfff" opacity="1"/>
-                <rect x="152" y="1" width="48" height="5" fill="#3ecfff" opacity="0.3"/>
-                <rect x="261" y="40" width="7" height="36" fill="#3ecfff" opacity="1"/>
-                <rect x="262" y="40" width="5" height="36" fill="#3ecfff" opacity="0.3"/>
-                <rect x="52" y="98" width="24" height="5" fill="#050d12"/>
-                <path d="M52,103 Q52,85 76,103" stroke="#3ecfff" stroke-width="0.8" opacity="0.5" fill="none" stroke-dasharray="2,1.5"/>
-                <rect x="16" y="138" width="7" height="20" fill="#050d12"/>
-                <path d="M23,138 Q41,138 23,158" stroke="#3ecfff" stroke-width="0.8" opacity="0.5" fill="none" stroke-dasharray="2,1.5"/>
-                <rect x="100" y="194" width="36" height="7" fill="#050d12"/>
-                <rect x="26" y="14" width="60" height="22" rx="2" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.3"/>
-                <rect x="34" y="44" width="30" height="18" fill="none" stroke="#3ecfff" stroke-width="0.4" opacity="0.18"/>
-                <rect x="28" y="110" width="52" height="34" rx="2" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.3"/>
-                <rect x="32" y="114" width="16" height="9" rx="2" fill="#3ecfff" opacity="0.05"/>
-                <rect x="52" y="114" width="16" height="9" rx="2" fill="#3ecfff" opacity="0.05"/>
-                <rect x="136" y="10" width="118" height="16" rx="1" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.3"/>
-                <circle cx="190" cy="17" r="3.5" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <circle cx="202" cy="17" r="3.5" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <circle cx="214" cy="17" r="3.5" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <rect x="144" y="50" width="52" height="34" fill="none" stroke="#3ecfff" stroke-width="0.4" opacity="0.22"/>
-                <ellipse cx="158" cy="158" rx="9" ry="11" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <rect x="149" y="148" width="18" height="8" rx="1" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <rect x="192" y="147" width="18" height="14" rx="2" fill="none" stroke="#3ecfff" stroke-width="0.6" opacity="0.35"/>
-                <text x="75" y="60" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4" letter-spacing="0.1em">LIVING</text>
-                <text x="75" y="154" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4" letter-spacing="0.1em">BEDROOM</text>
-                <text x="197" y="86" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4" letter-spacing="0.1em">KITCHEN</text>
-                <text x="187" y="170" text-anchor="middle" font-family="DM Mono,monospace" font-size="8" fill="#a8a8a4" letter-spacing="0.1em">BATH</text>
-                <line x1="16" y1="215" x2="268" y2="215" stroke="#585854" stroke-width="0.6" opacity="0.7"/>
-                <line x1="16" y1="211" x2="16" y2="219" stroke="#585854" stroke-width="0.6" opacity="0.7"/>
-                <line x1="268" y1="211" x2="268" y2="219" stroke="#585854" stroke-width="0.6" opacity="0.7"/>
-                <text x="142" y="226" text-anchor="middle" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">17.5 m</text>
-                <g transform="translate(252,236)">
-                  <circle cx="0" cy="0" r="11" stroke="#1a3040" stroke-width="0.8" fill="#050d12"/>
-                  <polygon points="0,-9 -3,0 0,-2.5 3,0" fill="#3ecfff" opacity="0.85"/>
-                  <polygon points="0,9 -3,0 0,2.5 3,0" fill="#585854" opacity="0.5"/>
-                  <text x="0" y="-13" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.85">N</text>
-                </g>
-              </g>
-              <!-- BRIDGE -->
-              <g transform="translate(320,130)">
-                <line x1="0" y1="0" x2="58" y2="0" stroke="#3ecfff" stroke-width="1.5" opacity="0.4"/>
-                <polygon points="50,-5 62,0 50,5" fill="#3ecfff" opacity="0.5"/>
-                <text x="31" y="-8" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.4" letter-spacing="0.08em">evolved</text>
-              </g>
-              <!-- RIGHT: PRODUCT UI -->
-              <rect x="382" y="0" width="318" height="280" fill="#080808"/>
-              <rect x="382" y="0" width="318" height="280" fill="none" stroke="#1a2030" stroke-width="0.8"/>
-              <text x="392" y="16" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.5" letter-spacing="0.1em">PRODUCT DESIGN — UI</text>
-              <g transform="translate(467,18)">
-                <rect x="0" y="0" width="148" height="244" rx="18" fill="#0d0d0d" stroke="#242424" stroke-width="1.5"/>
-                <rect x="44" y="0" width="60" height="4" rx="2" fill="#080808"/>
-                <rect x="54" y="2" width="40" height="4" rx="2" fill="#1a1a1a"/>
-                <text x="10" y="18" font-family="DM Mono,monospace" font-size="6" fill="#585854">9:41</text>
-                <text x="118" y="18" text-anchor="end" font-family="DM Mono,monospace" font-size="6" fill="#585854">●●●</text>
-                <rect x="8" y="22" width="132" height="20" rx="3" fill="#111"/>
-                <circle cx="22" cy="32" r="7" fill="#1a2a1a" stroke="#3ecfff" stroke-width="0.5" opacity="0.4"/>
-                <rect x="34" y="28" width="48" height="4" rx="1" fill="#a8a8a4" opacity="0.7"/>
-                <rect x="34" y="35" width="32" height="3" rx="1" fill="#585854" opacity="0.5"/>
-                <rect x="116" y="27" width="18" height="10" rx="5" fill="#3ecfff" opacity="0.15"/>
-                <text x="125" y="34" text-anchor="middle" font-family="DM Mono,monospace" font-size="5.5" fill="#3ecfff" opacity="0.7">+</text>
-                <rect x="8" y="48" width="60" height="56" rx="4" fill="#111" stroke="#242424" stroke-width="0.5"/>
-                <rect x="8" y="48" width="60" height="38" rx="4" fill="#0d1a12"/>
-                <rect x="11" y="82" width="36" height="3" rx="1" fill="#585854" opacity="0.6"/>
-                <rect x="11" y="87" width="24" height="3" rx="1" fill="#3ecfff" opacity="0.4"/>
-                <rect x="16" y="54" width="44" height="26" rx="2" fill="#0a2018"/>
-                <circle cx="38" cy="62" r="6" fill="#3ecfff" opacity="0.12"/>
-                <rect x="76" y="48" width="60" height="56" rx="4" fill="#111" stroke="#3ecfff" stroke-width="0.8" opacity="0.3"/>
-                <rect x="76" y="48" width="60" height="38" rx="4" fill="#1a0d1a"/>
-                <rect x="79" y="82" width="36" height="3" rx="1" fill="#a8a8a4" opacity="0.6"/>
-                <rect x="79" y="87" width="24" height="3" rx="1" fill="#3ecfff" opacity="0.6"/>
-                <rect x="84" y="54" width="44" height="26" rx="2" fill="#1a0d28"/>
-                <circle cx="106" cy="62" r="8" fill="#3ecfff" opacity="0.1"/>
-                <circle cx="106" cy="62" r="4" fill="#3ecfff" opacity="0.2"/>
-                <rect x="8" y="112" width="60" height="56" rx="4" fill="#111" stroke="#242424" stroke-width="0.5"/>
-                <rect x="8" y="112" width="60" height="38" rx="4" fill="#12181a"/>
-                <rect x="11" y="152" width="36" height="3" rx="1" fill="#585854" opacity="0.6"/>
-                <rect x="11" y="157" width="24" height="3" rx="1" fill="#3ecfff" opacity="0.35"/>
-                <rect x="76" y="112" width="60" height="56" rx="4" fill="#111" stroke="#242424" stroke-width="0.5"/>
-                <rect x="76" y="112" width="60" height="38" rx="4" fill="#1a1208"/>
-                <rect x="79" y="152" width="36" height="3" rx="1" fill="#585854" opacity="0.6"/>
-                <rect x="79" y="157" width="24" height="3" rx="1" fill="#3ecfff" opacity="0.35"/>
-                <rect x="8" y="216" width="132" height="22" rx="3" fill="#0d0d0d" stroke="#242424" stroke-width="0.5"/>
-                <text x="22" y="230" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.8">⊞</text>
-                <text x="50" y="230" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#585854">♪</text>
-                <text x="74" y="230" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#585854">◎</text>
-                <text x="98" y="230" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#585854">☰</text>
-              </g>
-              <text x="160" y="272" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854" letter-spacing="0.1em">ARCHITECTURE</text>
-              <text x="540" y="272" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#585854" letter-spacing="0.1em">PRODUCT DESIGN</text>
-              <line x1="24" y1="266" x2="296" y2="266" stroke="#242424" stroke-width="0.8"/>
-              <line x1="386" y1="266" x2="694" y2="266" stroke="#242424" stroke-width="0.8"/>
-            </svg>
+      <aside class="logo-field" aria-label="Interactive Chandu MP logo grid" data-reveal>
+        <div class="logo-grid-wrap">
+          <div class="logo-grid" aria-hidden="true">
+            <span class="logo-cell">C</span>
+            <span class="logo-cell">H</span>
+            <span class="logo-cell">A</span>
+            <span class="logo-cell">N</span>
+            <span class="logo-cell">D</span>
+            <span class="logo-cell">U</span>
+            <span class="logo-cell">M</span>
+            <span class="logo-cell">P</span>
+            <span class="logo-cell">C</span>
+            <span class="logo-cell">H</span>
+            <span class="logo-cell">A</span>
+            <span class="logo-cell">N</span>
+            <span class="logo-cell">D</span>
+            <span class="logo-cell">U</span>
+            <span class="logo-cell">M</span>
+            <span class="logo-cell">P</span>
+            <span class="logo-cell">C</span>
+            <span class="logo-cell">H</span>
+            <span class="logo-cell">A</span>
+            <span class="logo-cell">N</span>
+            <span class="logo-cell">D</span>
+            <span class="logo-cell">U</span>
+            <span class="logo-cell">M</span>
+            <span class="logo-cell">P</span>
           </div>
-
-          <blockquote class="origin-quote">
-            "The best products, like the best buildings,
-            <em>make complexity invisible.</em>
-            That's the job."
-          </blockquote>
-
         </div>
+        <div class="logo-grid-caption">
+          <span>Move your cursor</span>
+          <span>Red system / soft rotation</span>
+        </div>
+      </aside>
+    </section>
 
+    <section class="statement" data-reveal>
+      <h2>
+        Most designers think in screens.
+        I think in <span>systems</span>, then make them feel human.
+      </h2>
+    </section>
+
+    <section class="work-section" id="work" aria-labelledby="work-heading">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="section-kicker">Selected work</p>
+          <h2 id="work-heading">Projects that shipped.</h2>
+        </div>
+        <p class="section-kicker">AI / Web3 / Commerce / Tools</p>
       </div>
-    </div>
-  </section>
 
-  <!-- ── CHAPTER 02: WORK ── -->
-  <div class="container">
-    <div class="section-divider reveal">
-      <span class="section-num">02</span>
-      <div class="section-line"></div>
-      <span class="section-diamond">◆</span>
-      <div class="section-line"></div>
-      <span class="section-title">Selected work</span>
-    </div>
-  </div>
-
-  <section class="work" id="work" aria-labelledby="work-heading">
-
-    <div class="container work-header reveal">
-      <div class="work-header-row">
-        <span class="work-header-label" id="work-heading">2023 &mdash; 2025</span>
-        <span class="work-header-count">6 projects · AI, Web3, E-commerce, Tooling</span>
-      </div>
-    </div>
-
-    <!-- Featured: Qurios AI -->
-    <a href="work/qurios.html" class="project-featured" aria-label="Qurios AI — view case study">
-      <div class="project-featured-left">
-        <div class="project-num">001 &mdash; Flagship</div>
-        <div class="project-tags">
-          <span class="tag">AI</span>
-          <span class="tag">Web3</span>
-          <span class="tag">Creator Economy</span>
-          <span class="tag">8 months</span>
-        </div>
-        <h2 class="project-title project-title-lg">Qurios AI</h2>
-        <p class="project-desc">
-          Your knowledge, turned into a Mind people can talk to — and pay for.
-          Lead designer on the product, app, and marketing site across 3 full
-          iterations. Designed everything from collaborative research rooms
-          to a creator monetisation platform. Stepped in for the launch video
-          when the external team couldn't deliver. All three products are live.
-        </p>
-        <div class="project-stats">
-          <div>
-            <div class="project-stat-label">Users</div>
-            <div class="project-stat-value">350+ alpha</div>
-          </div>
-          <div>
-            <div class="project-stat-label">Raised</div>
-            <div class="project-stat-value">$250K</div>
-          </div>
-          <div>
-            <div class="project-stat-label">Role</div>
-            <div class="project-stat-value">Lead Designer</div>
-          </div>
-        </div>
-      </div>
-      <div class="project-featured-right">
-        <div class="project-thumb" aria-hidden="true">
-          <svg viewBox="0 0 560 340" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-            <rect width="560" height="340" fill="#060e0d"/>
-            <!-- Qurios spiral suggestion -->
-            <circle cx="280" cy="160" r="120" stroke="#00b4d8" stroke-width="0.4" opacity="0.07" fill="none"/>
-            <circle cx="280" cy="160" r="88" stroke="#00b4d8" stroke-width="0.4" opacity="0.12" fill="none"/>
-            <circle cx="280" cy="160" r="58" stroke="#00b4d8" stroke-width="0.6" opacity="0.18" fill="none"/>
-            <circle cx="280" cy="160" r="30" stroke="#00b4d8" stroke-width="0.8" opacity="0.22" fill="none"/>
-            <!-- Spiral arms -->
-            <path d="M280 160 Q310 130 340 110 Q360 100 370 90" stroke="#00b4d8" stroke-width="1" opacity="0.25" fill="none"/>
-            <path d="M280 160 Q250 130 220 112 Q200 100 190 90" stroke="#00b4d8" stroke-width="1" opacity="0.2" fill="none"/>
-            <path d="M280 160 Q310 190 330 218 Q340 235 345 248" stroke="#00b4d8" stroke-width="1" opacity="0.18" fill="none"/>
-            <path d="M280 160 Q250 190 228 218 Q216 235 210 248" stroke="#00b4d8" stroke-width="1" opacity="0.15" fill="none"/>
-            <!-- Mind cards -->
-            <rect x="64" y="72" width="72" height="88" rx="4" fill="#0d1a19" stroke="#0e2825" stroke-width="1"/>
-            <circle cx="100" cy="102" r="18" fill="#1a3030" stroke="#0e2825" stroke-width="1"/>
-            <rect x="76" y="126" width="48" height="5" rx="1" fill="#0e2825"/>
-            <rect x="82" y="135" width="36" height="3" rx="1" fill="#081412"/>
-            <rect x="160" y="60" width="72" height="88" rx="4" fill="#0d1a19" stroke="#00b4d8" stroke-width="0.8" opacity="0.5"/>
-            <circle cx="196" cy="90" r="18" fill="#0a2828" stroke="#00b4d8" stroke-width="0.8" opacity="0.5"/>
-            <rect x="172" y="114" width="48" height="5" rx="1" fill="#0e3a38" opacity="0.8"/>
-            <rect x="178" y="123" width="36" height="3" rx="1" fill="#081412"/>
-            <rect x="256" y="52" width="72" height="88" rx="4" fill="#0d1a19" stroke="#0e2825" stroke-width="1"/>
-            <circle cx="292" cy="82" r="18" fill="#1a3030" stroke="#0e2825" stroke-width="1"/>
-            <rect x="268" y="106" width="48" height="5" rx="1" fill="#0e2825"/>
-            <rect x="274" y="115" width="36" height="3" rx="1" fill="#081412"/>
-            <!-- Chat bubble -->
-            <rect x="148" y="188" width="264" height="52" rx="6" fill="#0d1a19" stroke="#0e2825" stroke-width="1"/>
-            <rect x="160" y="200" width="140" height="4" rx="1" fill="#1a3030"/>
-            <rect x="160" y="210" width="100" height="3" rx="1" fill="#0e2825"/>
-            <rect x="160" y="218" width="120" height="3" rx="1" fill="#0e2825"/>
-            <rect x="356" y="200" width="44" height="28" rx="4" fill="#00b4d8" opacity="0.15"/>
-            <rect x="364" y="208" width="28" height="3" rx="1" fill="#00b4d8" opacity="0.5"/>
-            <rect x="364" y="215" width="20" height="3" rx="1" fill="#00b4d8" opacity="0.35"/>
-            <!-- Price tag -->
-            <rect x="148" y="248" width="80" height="20" rx="2" fill="#081412" stroke="#0e2825" stroke-width="1"/>
-            <text x="188" y="262" text-anchor="middle" font-family="monospace" font-size="8" fill="#00b4d8" opacity="0.6">$0.10/query</text>
-          </svg>
-        </div>
-        <div class="project-arrow">
-          <div class="arrow-btn" aria-hidden="true">↗</div>
-        </div>
-      </div>
-    </a>
-
-    <!-- Row 1 -->
-    <div class="project-row">
-      <a href="work/cultureco.html" class="project-card" aria-label="CultureCo — view case study">
-        <div class="project-card-num">002</div>
-        <div class="project-tags">
-          <span class="tag">Web3</span>
-          <span class="tag">Creator Economy</span>
-          <span class="tag">12 months</span>
-        </div>
-        <h2 class="project-title project-title-sm">CultureCo</h2>
-        <p class="project-desc">
-          80M indie creators in India. Less than 0.02% make a living.
-          Founding designer for 12 months. Won the Based India Hackathon.
-          Sold out a creator dinner at 2x capacity. Learned what "viability" means.
-        </p>
-        <div class="project-card-footer">
-          <div>
-            <div class="project-stat-label">Outcome</div>
-            <div class="project-stat-value">Hackathon winner</div>
-          </div>
-          <div class="arrow-btn" aria-hidden="true">↗</div>
-        </div>
-      </a>
-
-      <a href="work/evm-wheels.html" class="project-card" aria-label="EVM Wheels — view case study">
-        <div class="project-card-num">003</div>
-        <div class="project-tags">
-          <span class="tag">SaaS</span>
-          <span class="tag">E-commerce</span>
-          <span class="tag">6 months</span>
-        </div>
-        <h2 class="project-title project-title-sm">EVM Wheels</h2>
-        <p class="project-desc">
-          EV rental platform across Kerala. Rebuilt the design system,
-          redesigned booking end to end. Checkout time dropped 40%.
-          The kind of work that doesn't make a great tweet but makes
-          a great product.
-        </p>
-        <div class="project-card-footer">
-          <div>
-            <div class="project-stat-label">Impact</div>
-            <div class="project-stat-value">40% faster checkout</div>
-          </div>
-          <div class="arrow-btn" aria-hidden="true">↗</div>
-        </div>
-      </a>
-    </div>
-
-    <!-- Row 2 -->
-    <div class="project-row">
-      <a href="work/mine-by-min.html" class="project-card" aria-label="Mine by Min — view case study">
-        <div class="project-card-num">004</div>
-        <div class="project-tags">
-          <span class="tag">E-commerce</span>
-          <span class="tag">Accessibility</span>
-          <span class="tag">1 month</span>
-        </div>
-        <h2 class="project-title project-title-sm">Mine by Min</h2>
-        <p class="project-desc">
-          Handmade jewellery, Instagram DMs to app. Designed for a
-          58-year-old Malayalam-speaking homemaker who finds online
-          transactions genuinely terrifying. Hardest UX brief I've had.
-          Most rewarding too.
-        </p>
-        <div class="project-card-footer">
-          <div>
-            <div class="project-stat-label">Focus</div>
-            <div class="project-stat-value">Inclusive UX</div>
-          </div>
-          <div class="arrow-btn" aria-hidden="true">↗</div>
-        </div>
-      </a>
-
-      <a href="work/decision-disco.html" class="project-card" aria-label="Decision Disco — view case study">
-        <div class="project-card-num">005</div>
-        <div class="project-tags">
-          <span class="tag">AI Product</span>
-          <span class="tag">Gemini API</span>
-          <span class="tag">48 hours</span>
-        </div>
-        <h2 class="project-title project-title-sm">Decision Disco</h2>
-        <p class="project-desc">
-          A friend couldn't pick a restaurant. I built an AI to decide
-          for him. Designed, coded, and deployed solo in 48 hours.
-          It's live. He still uses it.
-        </p>
-        <div class="project-card-footer">
-          <div>
-            <div class="project-stat-label">Built in</div>
-            <div class="project-stat-value">48 hours, solo</div>
-          </div>
-          <div class="arrow-btn" aria-hidden="true">↗</div>
-        </div>
-      </a>
-    </div>
-
-  </section>
-
-  <!-- ── GRAPHIC STRIP ── -->
-  <div class="graphic-strip" aria-hidden="true">
-
-    <!-- Design Systems -->
-    <div class="graphic-block">
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" fill="#0a0806"/>
-        <rect x="36" y="36" width="328" height="228" stroke="#1c1c1c" stroke-width="1.5" fill="none"/>
-        <rect x="36" y="36" width="5" height="5" fill="#484844"/>
-        <rect x="359" y="36" width="5" height="5" fill="#484844"/>
-        <rect x="36" y="259" width="5" height="5" fill="#484844"/>
-        <rect x="359" y="259" width="5" height="5" fill="#484844"/>
-        <rect x="52" y="52" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="154" y="52" width="92" height="58" fill="#141414" stroke="#3ecfff" stroke-width="1.5" opacity="0.4"/>
-        <rect x="256" y="52" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="52" y="120" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="154" y="120" width="92" height="58" fill="#3ecfff" fill-opacity="0.04" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="256" y="120" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="52" y="188" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="154" y="188" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="256" y="188" width="92" height="58" fill="#141414" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="154" y="52" width="5" height="5" fill="#3ecfff" opacity="0.7"/>
-        <rect x="241" y="52" width="5" height="5" fill="#3ecfff" opacity="0.7"/>
-        <rect x="154" y="105" width="5" height="5" fill="#3ecfff" opacity="0.7"/>
-        <rect x="241" y="105" width="5" height="5" fill="#3ecfff" opacity="0.7"/>
-        <rect x="60" y="62" width="34" height="4" fill="#2e2e2c" rx="1"/>
-        <rect x="60" y="70" width="56" height="3" fill="#1c1c1c" rx="1"/>
-        <rect x="162" y="62" width="34" height="4" fill="#3ecfff" opacity="0.4" rx="1"/>
-        <rect x="162" y="70" width="56" height="3" fill="#2e2e2c" rx="1"/>
-      </svg>
-      <div class="graphic-block-label">▶ Design systems</div>
-    </div>
-
-    <!-- Builder -->
-    <div class="graphic-block">
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" fill="#050a08"/>
-        <rect x="36" y="36" width="328" height="228" fill="#080808" stroke="#1c1c1c" stroke-width="1.5"/>
-        <rect x="36" y="36" width="328" height="22" fill="#141414"/>
-        <rect x="46" y="43" width="8" height="8" fill="#e05252" opacity="0.8"/>
-        <rect x="58" y="43" width="8" height="8" fill="#3ecfff" opacity="0.5"/>
-        <rect x="70" y="43" width="8" height="8" fill="#50b969" opacity="0.6"/>
-        <text x="52" y="82" font-family="DM Mono,monospace" font-size="10" fill="#484844">const mind = await qurios.build({</text>
-        <text x="52" y="98" font-family="DM Mono,monospace" font-size="10" fill="#484844">  source: ['twitter','docs'],</text>
-        <text x="52" y="114" font-family="DM Mono,monospace" font-size="10" fill="#50b969" opacity="0.8">  monetize: true,</text>
-        <text x="52" y="130" font-family="DM Mono,monospace" font-size="10" fill="#484844">  owner: 'chandu.mp'</text>
-        <text x="52" y="146" font-family="DM Mono,monospace" font-size="10" fill="#484844">})</text>
-        <text x="52" y="170" font-family="DM Mono,monospace" font-size="10" fill="#2e2e2c">// built in 48 hours</text>
-        <text x="52" y="190" font-family="DM Mono,monospace" font-size="10" fill="#3ecfff" opacity="0.8">■ deployed → vercel</text>
-        <rect x="52" y="208" width="8" height="14" fill="#3ecfff" opacity="0.7">
-          <animate attributeName="opacity" values="0.7;0;0.7" dur="1.1s" repeatCount="indefinite" calcMode="discrete"/>
-        </rect>
-      </svg>
-      <div class="graphic-block-label">▶ Designer who builds</div>
-    </div>
-
-    <!-- Motion -->
-    <div class="graphic-block">
-      <style>
-        @keyframes playhead-move {
-          0%   { transform: translateX(0px); }
-          100% { transform: translateX(224px); }
-        }
-        @keyframes kf-pulse {
-          0%, 100% { opacity: 0.9; r: 5; }
-          50%       { opacity: 0.4; r: 3.5; }
-        }
-        @keyframes kf-pulse-2 {
-          0%, 100% { opacity: 0.6; r: 5; }
-          50%       { opacity: 1; r: 6; }
-        }
-        @keyframes preview-slide {
-          0%   { transform: translateX(0px); opacity: 1; }
-          45%  { transform: translateX(52px); opacity: 1; }
-          50%  { transform: translateX(52px); opacity: 0; }
-          51%  { transform: translateX(0px); opacity: 0; }
-          55%  { transform: translateX(0px); opacity: 1; }
-          100% { transform: translateX(52px); opacity: 1; }
-        }
-        @keyframes preview-fade {
-          0%, 40%  { opacity: 0; }
-          50%, 90% { opacity: 1; }
-          100%     { opacity: 0; }
-        }
-        @keyframes layer-glow {
-          0%, 100% { opacity: 0.35; }
-          50%      { opacity: 0.65; }
-        }
-        @keyframes ticker-blink {
-          0%, 49% { opacity: 1; }
-          50%, 100% { opacity: 0; }
-        }
-        .playhead-line {
-          animation: playhead-move 4s linear infinite;
-        }
-        .kf-active { animation: kf-pulse 1.2s ease-in-out infinite; }
-        .kf-active-2 { animation: kf-pulse-2 1.8s ease-in-out infinite 0.4s; }
-        .preview-box { animation: preview-slide 4s ease-in-out infinite; }
-        .preview-text { animation: preview-fade 4s ease-in-out infinite; }
-        .layer-bar { animation: layer-glow 3s ease-in-out infinite; }
-        .ae-ticker { animation: ticker-blink 1s step-end infinite; }
-      </style>
-      <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-        <rect width="400" height="300" fill="#080508"/>
-
-        <!-- AE panel chrome -->
-        <rect x="12" y="14" width="376" height="272" fill="#0d0b0e" stroke="#242424" stroke-width="1"/>
-
-        <!-- Top toolbar -->
-        <rect x="12" y="14" width="376" height="24" fill="#141214"/>
-        <rect x="12" y="14" width="376" height="24" stroke="#242424" stroke-width="0.5" fill="none"/>
-        <!-- Toolbar buttons -->
-        <rect x="20" y="20" width="28" height="12" rx="2" fill="#1e1c1e" stroke="#303030" stroke-width="0.5"/>
-        <text x="34" y="29" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#a8a8a4">▶ ▮▮</text>
-        <rect x="54" y="20" width="20" height="12" rx="2" fill="#1e1c1e" stroke="#303030" stroke-width="0.5"/>
-        <text x="64" y="29" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#585854">|◀</text>
-        <rect x="80" y="20" width="20" height="12" rx="2" fill="#1e1c1e" stroke="#303030" stroke-width="0.5"/>
-        <text x="90" y="29" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#585854">▶|</text>
-        <!-- FPS / timecode -->
-        <rect x="290" y="19" width="56" height="14" rx="2" fill="#0a080a" stroke="#303030" stroke-width="0.5"/>
-        <text x="318" y="29" text-anchor="middle" font-family="DM Mono,monospace" font-size="7.5" fill="#3ecfff">
-          0:00:02<tspan class="ae-ticker">_</tspan>
-        </text>
-        <text x="358" y="29" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">24fps</text>
-
-        <!-- Preview panel — top left -->
-        <rect x="20" y="44" width="144" height="108" fill="#050408" stroke="#1e1c1e" stroke-width="1"/>
-        <!-- Preview content — animated element -->
-        <rect x="20" y="44" width="144" height="108" fill="#050408"/>
-        <!-- Animated object in preview -->
-        <g class="preview-box">
-          <rect x="40" y="78" width="48" height="38" rx="3" fill="#3ecfff" opacity="0.12" stroke="#3ecfff" stroke-width="1.2" opacity="0.5"/>
-          <rect x="44" y="84" width="32" height="4" rx="1" fill="#3ecfff" opacity="0.4"/>
-          <rect x="44" y="92" width="24" height="3" rx="1" fill="#3ecfff" opacity="0.25"/>
-          <rect x="44" y="99" width="28" height="3" rx="1" fill="#3ecfff" opacity="0.2"/>
-        </g>
-        <!-- Preview fade-in label -->
-        <g class="preview-text">
-          <text x="92" y="130" text-anchor="middle" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff" opacity="0.5">OPACITY 100%</text>
-        </g>
-        <!-- Preview border labels -->
-        <text x="24" y="54" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">COMP 1</text>
-        <text x="130" y="54" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">1920×1080</text>
-        <!-- Crosshair guides -->
-        <line x1="92" y1="44" x2="92" y2="152" stroke="#1e1c1e" stroke-width="0.5" stroke-dasharray="2,4"/>
-        <line x1="20" y1="98" x2="164" y2="98" stroke="#1e1c1e" stroke-width="0.5" stroke-dasharray="2,4"/>
-
-        <!-- Layer panel — left side below preview -->
-        <rect x="20" y="158" width="104" height="120" fill="#0a080c" stroke="#1e1c1e" stroke-width="0.5"/>
-        <!-- Layer header -->
-        <rect x="20" y="158" width="104" height="14" fill="#141214"/>
-        <text x="26" y="168" font-family="DM Mono,monospace" font-size="7" fill="#585854" letter-spacing="0.06em">LAYERS</text>
-
-        <!-- Layer rows -->
-        <!-- Layer 1 — Title -->
-        <rect x="20" y="172" width="104" height="20" fill="#1a1420" stroke="#242424" stroke-width="0.3"/>
-        <rect x="20" y="172" width="3" height="20" fill="#3ecfff" opacity="0.7"/>
-        <text x="30" y="184" font-family="DM Mono,monospace" font-size="7.5" fill="#a8a8a4">T  Title Card</text>
-        <text x="110" y="184" text-anchor="end" font-family="DM Mono,monospace" font-size="6.5" fill="#3ecfff" opacity="0.5">◎</text>
-
-        <!-- Layer 2 — BG -->
-        <rect x="20" y="192" width="104" height="20" fill="#0f0c12" stroke="#242424" stroke-width="0.3"/>
-        <rect x="20" y="192" width="3" height="20" fill="#9a3a6a" opacity="0.7"/>
-        <text x="30" y="204" font-family="DM Mono,monospace" font-size="7.5" fill="#a8a8a4">□  BG Gradient</text>
-
-        <!-- Layer 3 — Logo -->
-        <rect x="20" y="212" width="104" height="20" fill="#0a080c" stroke="#242424" stroke-width="0.3"/>
-        <rect x="20" y="212" width="3" height="20" fill="#5ec974" opacity="0.6"/>
-        <text x="30" y="224" font-family="DM Mono,monospace" font-size="7.5" fill="#a8a8a4">◎  Logo Spiral</text>
-
-        <!-- Layer 4 — Audio -->
-        <rect x="20" y="232" width="104" height="20" fill="#0a080c" stroke="#242424" stroke-width="0.3"/>
-        <rect x="20" y="232" width="3" height="20" fill="#585854" opacity="0.6"/>
-        <text x="30" y="244" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">♪  Audio</text>
-
-        <!-- Layer 5 -->
-        <rect x="20" y="252" width="104" height="26" fill="#0a080c" stroke="#242424" stroke-width="0.3"/>
-        <rect x="20" y="252" width="3" height="26" fill="#3ecfff" opacity="0.3"/>
-        <text x="30" y="264" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">T  Subtitle</text>
-
-        <!-- ── TIMELINE — main area ── -->
-        <rect x="124" y="44" width="256" height="234" fill="#080508" stroke="#1e1c1e" stroke-width="0.5"/>
-
-        <!-- Time ruler -->
-        <rect x="124" y="44" width="256" height="20" fill="#0f0c12"/>
-        <!-- Time markers -->
-        <line x1="124" y1="64" x2="380" y2="64" stroke="#242424" stroke-width="0.5"/>
-        <text x="128" y="56" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">0:00</text>
-        <text x="180" y="56" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">1:00</text>
-        <text x="236" y="56" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">2:00</text>
-        <text x="292" y="56" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">3:00</text>
-        <text x="346" y="56" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">4:00</text>
-        <!-- Tick marks -->
-        <line x1="156" y1="58" x2="156" y2="64" stroke="#303030" stroke-width="0.5"/>
-        <line x1="208" y1="58" x2="208" y2="64" stroke="#303030" stroke-width="0.5"/>
-        <line x1="264" y1="58" x2="264" y2="64" stroke="#303030" stroke-width="0.5"/>
-        <line x1="320" y1="58" x2="320" y2="64" stroke="#303030" stroke-width="0.5"/>
-
-        <!-- ── TRACK BARS ── -->
-        <!-- Layer 1 track — Title Card — neon blue -->
-        <rect x="124" y="64" width="256" height="20" fill="#10060e"/>
-        <rect x="132" y="68" width="148" height="12" rx="2" fill="#3ecfff" opacity="0.18" stroke="#3ecfff" stroke-width="0.8" opacity="0.4" class="layer-bar"/>
-        <!-- Keyframes on layer 1 -->
-        <circle cx="132" cy="74" r="5" fill="#3ecfff" class="kf-active"/>
-        <circle cx="180" cy="74" r="5" fill="#3ecfff" opacity="0.5"/>
-        <circle cx="232" cy="74" r="5" fill="#3ecfff" class="kf-active-2"/>
-        <circle cx="280" cy="74" r="5" fill="#3ecfff" opacity="0.5"/>
-
-        <!-- Layer 2 track — BG -->
-        <rect x="124" y="84" width="256" height="20" fill="#0d0510"/>
-        <rect x="128" y="88" width="240" height="12" rx="2" fill="#9a3a6a" opacity="0.12" stroke="#9a3a6a" stroke-width="0.5" opacity="0.3"/>
-        <circle cx="128" cy="94" r="4" fill="#9a3a6a" opacity="0.6"/>
-        <circle cx="368" cy="94" r="4" fill="#9a3a6a" opacity="0.6"/>
-
-        <!-- Layer 3 track — Logo -->
-        <rect x="124" y="104" width="256" height="20" fill="#06100a"/>
-        <rect x="148" y="108" width="120" height="12" rx="2" fill="#5ec974" opacity="0.12" stroke="#5ec974" stroke-width="0.5" opacity="0.3"/>
-        <circle cx="148" cy="114" r="4" fill="#5ec974" opacity="0.5"/>
-        <circle cx="196" cy="114" r="5" fill="#5ec974" opacity="0.9"/>
-        <circle cx="268" cy="114" r="4" fill="#5ec974" opacity="0.5"/>
-
-        <!-- Layer 4 track — Audio waveform -->
-        <rect x="124" y="124" width="256" height="20" fill="#080508"/>
-        <!-- Waveform bars -->
-        <g opacity="0.35">
-          <rect x="130" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="134" y="130" width="2" height="8" fill="#585854" rx="1"/>
-          <rect x="138" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="142" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="146" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="150" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="154" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="158" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="162" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="166" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="170" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="174" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="178" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="182" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="186" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="190" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="194" y="130" width="2" height="8" fill="#585854" rx="1"/>
-          <rect x="198" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="202" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="206" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="210" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="214" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="218" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="222" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="226" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="230" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="234" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="238" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="242" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="246" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="250" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="254" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="258" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="262" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="266" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="270" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="274" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="278" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="282" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="286" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="290" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="294" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="298" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="302" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="306" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="310" y="130" width="2" height="8" fill="#585854" rx="1"/>
-          <rect x="314" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="318" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="322" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="326" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="330" y="132" width="2" height="5" fill="#585854" rx="1"/>
-          <rect x="334" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="338" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="342" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="346" y="129" width="2" height="10" fill="#585854" rx="1"/>
-          <rect x="350" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="354" y="131" width="2" height="7" fill="#585854" rx="1"/>
-          <rect x="358" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="362" y="127" width="2" height="14" fill="#585854" rx="1"/>
-          <rect x="366" y="130" width="2" height="9" fill="#585854" rx="1"/>
-          <rect x="370" y="128" width="2" height="12" fill="#585854" rx="1"/>
-          <rect x="374" y="127" width="2" height="14" fill="#585854" rx="1"/>
-        </g>
-
-        <!-- Layer 5 track — Subtitle -->
-        <rect x="124" y="144" width="256" height="20" fill="#080508"/>
-        <rect x="200" y="148" width="80" height="12" rx="2" fill="#3ecfff" opacity="0.1" stroke="#3ecfff" stroke-width="0.5" opacity="0.2"/>
-        <circle cx="200" cy="154" r="4" fill="#3ecfff" opacity="0.4"/>
-        <circle cx="280" cy="154" r="4" fill="#3ecfff" opacity="0.4"/>
-
-        <!-- Horizontal grid lines between tracks -->
-        <line x1="124" y1="84"  x2="380" y2="84"  stroke="#181418" stroke-width="0.5"/>
-        <line x1="124" y1="104" x2="380" y2="104" stroke="#181418" stroke-width="0.5"/>
-        <line x1="124" y1="124" x2="380" y2="124" stroke="#181418" stroke-width="0.5"/>
-        <line x1="124" y1="144" x2="380" y2="144" stroke="#181418" stroke-width="0.5"/>
-        <line x1="124" y1="164" x2="380" y2="164" stroke="#181418" stroke-width="0.5"/>
-
-        <!-- Expression / properties area -->
-        <rect x="124" y="164" width="256" height="96" fill="#050408"/>
-        <text x="130" y="178" font-family="DM Mono,monospace" font-size="7.5" fill="#585854">▼  Transform</text>
-        <text x="140" y="192" font-family="DM Mono,monospace" font-size="7" fill="#585854">⊙  Position</text>
-        <text x="280" y="192" text-anchor="end" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff">960.0, 540.0</text>
-        <text x="140" y="206" font-family="DM Mono,monospace" font-size="7" fill="#585854">⊙  Scale</text>
-        <text x="280" y="206" text-anchor="end" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff">100.0%</text>
-        <text x="140" y="220" font-family="DM Mono,monospace" font-size="7" fill="#585854">⊙  Opacity</text>
-        <text x="280" y="220" text-anchor="end" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff">100.0%</text>
-        <text x="140" y="234" font-family="DM Mono,monospace" font-size="7" fill="#585854">⊙  Rotation</text>
-        <text x="280" y="234" text-anchor="end" font-family="DM Mono,monospace" font-size="7" fill="#3ecfff">0 × +0.0°</text>
-
-        <!-- Expression line -->
-        <rect x="130" y="244" width="238" height="10" rx="2" fill="#0f0812" stroke="#242424" stroke-width="0.5"/>
-        <text x="136" y="252" font-family="DM Mono,monospace" font-size="6.5" fill="#9a3a6a">wiggle(2, 30)</text>
-        <text x="360" y="252" text-anchor="end" font-family="DM Mono,monospace" font-size="6.5" fill="#585854">⚡</text>
-
-        <!-- ── ANIMATED PLAYHEAD ── -->
-        <g class="playhead-line">
-          <!-- Head triangle -->
-          <polygon points="127,44 133,44 130,50" fill="#3ecfff" opacity="0.9"/>
-          <!-- Vertical line -->
-          <line x1="130" y1="50" x2="130" y2="270" stroke="#3ecfff" stroke-width="1.2" opacity="0.7"/>
-        </g>
-
-      </svg>
-      <div class="graphic-block-label">▶ Motion design</div>
-    </div>
-
-  </div>
-
-  <!-- ── CHAPTER 03: CAPABILITIES ── -->
-  <div class="container">
-    <div class="section-divider reveal">
-      <span class="section-num">03</span>
-      <div class="section-line"></div>
-      <span class="section-diamond">◆</span>
-      <div class="section-line"></div>
-      <span class="section-title">How I work</span>
-    </div>
-  </div>
-
-  <section class="capabilities" id="capabilities" aria-labelledby="cap-heading">
-    <div class="container">
-      <div class="capabilities-grid-wrapper">
-        <div class="capabilities-label" id="cap-heading">Capabilities</div>
-        <div class="capabilities-grid stagger">
-          <div class="capability reveal">
-            <div class="capability-num">01 ■</div>
-            <h3 class="capability-title">AI Product Design</h3>
-            <p class="capability-desc">Conversational interfaces, agent UX, onboarding for products people don't fully understand yet. The tricky stuff.</p>
-          </div>
-          <div class="capability reveal">
-            <div class="capability-num">02 ■</div>
-            <h3 class="capability-title">Design Systems</h3>
-            <p class="capability-desc">Token architecture to component handoff. Built systems for Glanser, EVM Wheels, CultureCo. Litium CMS integration experience.</p>
-          </div>
-          <div class="capability reveal">
-            <div class="capability-num">03 ■</div>
-            <h3 class="capability-title">Motion Design</h3>
-            <p class="capability-desc">After Effects for launch videos, Framer for interaction prototypes. Stepped in when the external team couldn't deliver. It shipped.</p>
-          </div>
-          <div class="capability reveal">
-            <div class="capability-num">04 ■</div>
-            <h3 class="capability-title">Designer who builds</h3>
-            <p class="capability-desc">Vibe-coded a live AI app. Built internal tooling for design review. Deployed on Vercel. No engineer required — not every time, but when it matters.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CHAPTER 04: CLOSER ── -->
-  <div class="container">
-    <div class="section-divider reveal">
-      <span class="section-num">04</span>
-      <div class="section-line"></div>
-      <span class="section-diamond">◆</span>
-      <div class="section-line"></div>
-      <span class="section-title">What's next</span>
-    </div>
-  </div>
-
-  <section class="closer" aria-labelledby="closer-heading">
-    <div class="container">
-      <div class="closer-grid">
-
-        <div class="reveal-left">
-          <h2 class="closer-heading" id="closer-heading">
-            Looking for a team<br>
-            that ships <em>real</em> things.
-          </h2>
-          <p class="closer-body">
-            Not decks that become other decks. Not designs that live in Figma forever.
-            Products that actually reach people — with all the complexity that requires
-            and none of the process that doesn't.
-          </p>
-          <div class="cta-row">
-            <a href="mailto:chandu.mp.14l@gmail.com" class="btn-primary">
-              ▶ Get in touch
-            </a>
-            <a href="assets/chandu-mp-resume.pdf" class="btn-secondary" download>
-              View resume →
-            </a>
-          </div>
-        </div>
-
-        <div class="stats-panel reveal-right" aria-label="Career highlights">
-          <div class="stat-row">
-            <div class="stat-number" data-count="5+">5+</div>
-            <div class="stat-label">
-              <strong>Products shipped</strong>
-              AI, Web3, e-commerce, rental — across early-stage startups
+      <div class="project-grid">
+        <a
+          href="work/qurios.html"
+          class="project-card featured"
+          data-reveal
+          style="--project-image: url('assets/images/qurios/iter3-chat.jpg');"
+          aria-label="View Qurios AI case study"
+        >
+          <div class="project-top">
+            <span class="project-index">001 / Flagship</span>
+            <div class="project-tags">
+              <span>AI</span>
+              <span>Web3</span>
+              <span>Lead Designer</span>
             </div>
           </div>
-          <div class="stat-row">
-            <div class="stat-number" data-count="40%">40%</div>
-            <div class="stat-label">
-              <strong>Checkout improvement</strong>
-              EVM Wheels usability study, 20+ participants
-            </div>
+          <div>
+            <h3 class="project-title">Qurios AI</h3>
+            <p class="project-desc">
+              Where your knowledge becomes a living, interactive mind. Product,
+              brand, motion, and UX across three major iterations.
+            </p>
           </div>
-          <div class="stat-row">
-            <div class="stat-number">48h</div>
-            <div class="stat-label">
-              <strong>Idea to deployed product</strong>
-              Decision Disco — designed, coded, shipped solo
-            </div>
-          </div>
-          <div class="stat-row">
-            <div class="stat-number" data-count="250+">250+</div>
-            <div class="stat-label">
-              <strong>Hackathon entries beaten</strong>
-              CultureCo Alpha won Based India Hackathon
-            </div>
-          </div>
-        </div>
+          <span class="project-arrow" aria-hidden="true">-></span>
+        </a>
 
+        <a
+          href="work/cultureco.html"
+          class="project-card"
+          data-reveal
+          style="--project-image: url('https://framerusercontent.com/images/SlWXVVX5oKeZUMPYoI5AIQnkkVY.png?lossless=1&width=1069&height=1138');"
+          aria-label="View CultureCo case study"
+        >
+          <div class="project-top">
+            <span class="project-index">002</span>
+            <div class="project-tags">
+              <span>Web3</span>
+              <span>E-commerce</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title">CultureCo</h3>
+            <p class="project-desc">
+              Empowering artists, engaging fans, and gamifying creativity for
+              India's indie creator economy.
+            </p>
+          </div>
+          <span class="project-arrow" aria-hidden="true">-></span>
+        </a>
+
+        <a
+          href="work/decision-disco.html"
+          class="project-card"
+          data-reveal
+          style="--project-image: url('https://framerusercontent.com/images/01YaKmi8UTNcHKiwTkQEfjesU.png?scale-down-to=2048&width=3164&height=1964');"
+          aria-label="View Decision Disco case study"
+        >
+          <div class="project-top">
+            <span class="project-index">003</span>
+            <div class="project-tags">
+              <span>AI</span>
+              <span>Vibe coded</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="project-title">Decision Disco</h3>
+            <p class="project-desc">
+              A friend could not decide what to eat for lunch, so I designed,
+              coded, and shipped an AI decision app in 48 hours.
+            </p>
+          </div>
+          <span class="project-arrow" aria-hidden="true">-></span>
+        </a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── FOOTER ── -->
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <span class="footer-copy">© Chandu MP — 2025</span>
-      <nav class="footer-links" aria-label="Social links">
+    <section class="systems-section" id="systems" aria-labelledby="systems-heading">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="section-kicker">How I work</p>
+          <h2 id="systems-heading">Quiet systems. Better products.</h2>
+        </div>
+      </div>
+
+      <div class="systems-grid" data-reveal>
+        <div class="system-card">
+          <strong>01 / UX Architecture</strong>
+          <p>Information structure, flows, and interaction models that can survive real product complexity.</p>
+        </div>
+        <div class="system-card">
+          <strong>02 / Visual Systems</strong>
+          <p>Tokens, components, motion rules, and brand language that make teams faster.</p>
+        </div>
+        <div class="system-card">
+          <strong>03 / AI Products</strong>
+          <p>Prompt flows, memory models, agent UX, and interfaces that make intelligence feel usable.</p>
+        </div>
+        <div class="system-card">
+          <strong>04 / Prototypes</strong>
+          <p>Fast, high-signal builds that turn product questions into working software.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-heading" data-reveal>
+      <h2 id="about-heading">Architecture taught me structure. Products taught me speed.</h2>
+      <div>
+        <p>
+          Architecture school trained me to think about constraints, systems, and the people
+          who eventually have to live inside what you make. That thinking followed me into product.
+        </p>
+        <p style="margin-top: 20px;">
+          I care about interfaces that look good, but I care more about whether they hold together:
+          across edge cases, slow connections, messy teams, and real users trying to get something done.
+        </p>
+      </div>
+    </section>
+
+    <footer class="home-footer">
+      <p class="footer-copy">© Chandu MP. 2026</p>
+      <div class="footer-links">
+        <a href="mailto:chandu.mp.14l@gmail.com">Mail</a>
         <a href="https://www.instagram.com/chandu_mp/" target="_blank" rel="noopener">Instagram</a>
         <a href="https://x.com/p_chandu99066" target="_blank" rel="noopener">Twitter</a>
-        <a href="mailto:chandu.mp.14l@gmail.com">Mail</a>
-        <a href="assets/chandu-mp-resume.pdf" download>Resume</a>
-      </nav>
-    </div>
-  </footer>
+      </div>
+    </footer>
+  </main>
 
-  <!-- ── SCRIPTS ── -->
-  <script src="js/cursor.js" defer></script>
-  <script src="js/motion.js" defer></script>
-
+  <script src="js/cursor.js"></script>
+  <script src="js/logo-grid.js"></script>
 </body>
 </html>
