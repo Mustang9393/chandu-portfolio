@@ -17,12 +17,12 @@
 
   --text-primary: #15120f;
   --text-secondary: #5f574d;
-  --text-tertiary: #958978;
+  --text-tertiary: #6f6f6f;
 
-  --accent: #ff5b2e;
-  --accent-warm: #8b3ff2;
-  --accent-dim: rgba(255, 91, 46, 0.09);
-  --accent-border: rgba(255, 91, 46, 0.24);
+  --accent: #c25353;
+  --accent-warm: #d95050;
+  --accent-dim: rgba(194, 83, 83, 0.09);
+  --accent-border: rgba(194, 83, 83, 0.28);
 
   --green: #168a4a;
 }
@@ -39,7 +39,7 @@ body {
 }
 
 ::selection {
-  background: rgba(255, 91, 46, 0.18);
+  background: rgba(194, 83, 83, 0.18);
   color: var(--text-primary);
 }
 
@@ -48,12 +48,12 @@ body {
 }
 
 .cursor-ring {
-  border-color: rgba(255, 91, 46, 0.32) !important;
+  border-color: rgba(194, 83, 83, 0.38) !important;
 }
 
 body.cursor-hover .cursor-dot,
 body.ch .cursor-dot {
-  background: rgba(255, 91, 46, 0.12) !important;
+  background: rgba(194, 83, 83, 0.12) !important;
 }
 
 body.cursor-hover .cursor-ring,
@@ -85,7 +85,7 @@ section,
 
 .hero-bg {
   background:
-    radial-gradient(ellipse 44% 36% at 78% 24%, rgba(255, 91, 46, 0.12), transparent 72%),
+    radial-gradient(ellipse 44% 36% at 78% 24%, rgba(194, 83, 83, 0.12), transparent 72%),
     radial-gradient(ellipse 38% 34% at 18% 74%, rgba(139, 63, 242, 0.1), transparent 70%) !important;
 }
 
@@ -165,6 +165,23 @@ section,
 .footer-copy,
 .work-header-count,
 .work-header-label {
+  color: var(--text-secondary) !important;
+}
+
+[style*="#3ecfff"],
+[style*="#c8b89a"],
+[style*="rgb(62, 207, 255)"],
+[style*="rgb(200, 184, 154)"] {
+  color: var(--accent) !important;
+  border-color: var(--accent-border) !important;
+}
+
+[style*="#484844"],
+[style*="#585854"],
+[style*="#8a8a87"],
+[style*="rgb(72, 72, 68)"],
+[style*="rgb(88, 88, 84)"],
+[style*="rgb(138, 138, 135)"] {
   color: var(--text-secondary) !important;
 }
 
@@ -332,7 +349,7 @@ section img[style*="border"] {
 .btn-primary {
   color: #fffdfa !important;
   background: var(--text-primary) !important;
-  box-shadow: 4px 4px 0 rgba(255, 91, 46, 0.28) !important;
+  box-shadow: 4px 4px 0 rgba(194, 83, 83, 0.28) !important;
 }
 
 .btn-secondary,

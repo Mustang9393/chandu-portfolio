@@ -7,7 +7,7 @@
   --home-bg: #ffffff;
   --home-ink: #252525;
   --home-muted: #545454;
-  --home-soft: #888888;
+  --home-soft: #6f6f6f;
   --home-line: #dedede;
   --home-panel: #e8e8e8;
   --home-panel-deep: #c4c4c4;
@@ -24,6 +24,69 @@ body {
   background: var(--home-bg);
   color: var(--home-ink);
   font-family: "Open Sans", Inter, system-ui, sans-serif;
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 8px;
+  height: 8px;
+  pointer-events: none;
+  background: var(--home-red);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition:
+    width 240ms var(--home-ease),
+    height 240ms var(--home-ease),
+    background 240ms ease,
+    opacity 180ms ease;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  border: 1px solid rgba(194, 83, 83, 0.46);
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  transition:
+    width 340ms var(--home-ease),
+    height 340ms var(--home-ease),
+    border-color 240ms ease,
+    opacity 180ms ease;
+  will-change: transform;
+}
+
+body.cursor-hover .cursor-dot {
+  width: 44px;
+  height: 44px;
+  background: rgba(194, 83, 83, 0.12);
+}
+
+body.cursor-hover .cursor-ring {
+  width: 50px;
+  height: 50px;
+  border-color: var(--home-red-deep);
+}
+
+body.cursor-text .cursor-dot {
+  width: 3px;
+  height: 30px;
+  border-radius: 3px;
+  background: var(--home-red-deep);
+}
+
+body.cursor-text .cursor-ring {
+  width: 0;
+  height: 0;
+  border-color: transparent;
 }
 
 .home-page {
@@ -149,7 +212,7 @@ body {
   font-family: "Inter Tight", Inter, system-ui, sans-serif;
   font-size: clamp(64px, 12vw, 178px);
   font-weight: 600;
-  letter-spacing: -0.07em;
+  letter-spacing: -0.06em;
   line-height: 0.78;
 }
 
@@ -210,9 +273,10 @@ body {
 }
 
 .logo-grid-wrap {
-  background: var(--home-red);
-  color: #fff;
+  background: #fff;
+  color: var(--home-red-deep);
   padding: clamp(14px, 2vw, 24px);
+  border: 1px solid var(--home-red-deep);
   overflow: hidden;
 }
 
@@ -226,13 +290,13 @@ body {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.34);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.02);
-  font-family: "Inter Tight", Inter, system-ui, sans-serif;
-  font-size: clamp(28px, 4vw, 58px);
-  font-weight: 600;
-  letter-spacing: -0.08em;
+  border: 1px solid rgba(194, 83, 83, 0.26);
+  color: var(--home-red-deep);
+  background: rgba(194, 83, 83, 0.035);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-size: clamp(30px, 4.8vw, 68px);
+  font-weight: 900;
+  letter-spacing: 0;
   line-height: 1;
   transform: rotate(var(--logo-rotate, 0deg)) scale(var(--logo-scale, 1));
   transition:
@@ -243,8 +307,8 @@ body {
 }
 
 .logo-cell.is-near {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.72);
+  background: rgba(194, 83, 83, 0.12);
+  border-color: rgba(194, 83, 83, 0.72);
 }
 
 .logo-grid-caption {
@@ -294,7 +358,7 @@ body {
 }
 
 .statement h2 span {
-  color: var(--home-red);
+  color: var(--home-red-deep);
 }
 
 .work-section,
@@ -340,8 +404,8 @@ body {
   justify-content: space-between;
   overflow: hidden;
   padding: clamp(22px, 3vw, 36px);
-  color: var(--home-ink);
-  background: linear-gradient(180deg, var(--home-panel), var(--home-panel-deep));
+  color: #fff;
+  background: var(--home-black);
   isolation: isolate;
 }
 
@@ -356,12 +420,11 @@ body {
   inset: 0;
   z-index: -1;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.58), rgba(255, 255, 255, 0.06)),
     var(--project-image, none);
   background-size: cover;
   background-position: center;
-  opacity: 0.82;
-  filter: saturate(0.88);
+  opacity: 1;
+  filter: saturate(1.16) contrast(1.04);
   transform: scale(1.01);
   transition:
     transform 700ms var(--home-ease),
@@ -374,7 +437,9 @@ body {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.64) 46%, rgba(255, 255, 255, 0.88));
+  background:
+    linear-gradient(180deg, rgba(23, 23, 23, 0.28), rgba(23, 23, 23, 0.14) 38%, rgba(23, 23, 23, 0.84)),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.72), rgba(23, 23, 23, 0.08) 58%);
 }
 
 .project-card:hover::before {
@@ -391,7 +456,7 @@ body {
 }
 
 .project-index {
-  color: var(--home-red-deep);
+  color: #fff;
 }
 
 .project-tags {
@@ -400,19 +465,19 @@ body {
   gap: 8px;
   flex-wrap: wrap;
   max-width: 55%;
-  color: var(--home-muted);
+  color: var(--home-ink);
 }
 
 .project-tags span {
   padding: 5px 9px;
   background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(37, 37, 37, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.54);
 }
 
 .project-title {
   max-width: 720px;
   margin-bottom: 16px;
-  color: var(--home-ink);
+  color: #fff;
   font-family: "Inter Tight", Inter, system-ui, sans-serif;
   font-size: clamp(42px, 6vw, 104px);
   font-weight: 600;
@@ -426,7 +491,7 @@ body {
 
 .project-desc {
   max-width: 520px;
-  color: var(--home-muted);
+  color: rgba(255, 255, 255, 0.92);
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.45;
   letter-spacing: -0.02em;
@@ -468,7 +533,7 @@ body {
 }
 
 .system-card:hover {
-  background: var(--home-red);
+  background: var(--home-red-deep);
   color: #fff;
 }
 
