@@ -313,6 +313,46 @@ section img[style*="border"] {
   margin: 36px 0 16px !important;
 }
 
+.next-project,
+.next-project *,
+.case-footer,
+.case-footer *,
+.project-featured,
+.project-featured *,
+.project-card,
+.project-card * {
+  border-color: var(--border) !important;
+}
+
+.next-project h3,
+.next-project strong,
+.next-project [style*="color:var(--t1)"],
+.next-project [style*="color: var(--t1)"],
+.next-project [style*="#f0ede8"],
+.next-project [style*="#F0EDE8"],
+.case-footer a,
+.case-footer strong {
+  color: var(--accent) !important;
+}
+
+.next-project p,
+.next-project div:not(.meta-label),
+.case-footer,
+.case-footer span {
+  color: var(--text-secondary) !important;
+}
+
+.phone-label,
+.screen-caption,
+.project-caption,
+.next-project .meta-label {
+  color: var(--accent) !important;
+}
+
+.phone-sublabel {
+  color: var(--text-secondary) !important;
+}
+
 .screen-frame--browser::before,
 .app-mockup-bar {
   background: #ede5d9 !important;

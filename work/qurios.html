@@ -256,6 +256,18 @@
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 16px;
     }
+    .qurios-mobile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(220px, 340px));
+      justify-content: center;
+      gap: 28px;
+      margin-bottom: 16px;
+      align-items: start;
+    }
+    .qurios-mobile-grid .phone-frame {
+      max-width: 340px;
+      margin: 0 auto;
+    }
 
     /* Mobile phone frame */
     .phone-frame {
@@ -549,6 +561,8 @@
       /* Screen grids */
       .screen-grid-2,
       .screen-grid-3 { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .qurios-mobile-grid { grid-template-columns: 1fr !important; gap: 20px !important; }
+      .qurios-mobile-grid .phone-frame { max-width: 360px; }
 
       /* Decision list */
       .decision-item { grid-template-columns: 48px 1fr; gap: 0; }
@@ -907,7 +921,7 @@
       <div class="screen-caption" style="margin-bottom:40px;">Final product — Telegram-style chat with Sam Altman's Mind. "$0.10/query" visible but non-intrusive. Left sidebar: category icons + Mind list. Right: full conversation canvas.</div>
 
       <!-- Mobile trio -->
-      <div class="screen-grid-3 reveal" style="gap:24px; margin-bottom:16px; align-items: start;">
+      <div class="qurios-mobile-grid reveal">
         <div>
           <div class="phone-frame">
             <img src="../assets/images/qurios/iter3-feed.jpg" alt="Qurios Social Feed" loading="lazy">
@@ -1290,7 +1304,7 @@
           <a href="../index.html">Home</a>
           <a href="cultureco.html">CultureCo</a>
           <a href="evm-wheels.html">EVM Wheels</a>
-          <a href="mailto:chandu.mp.14l@gmail.com">Contact</a>
+          <a href="mailto:chandu.mp.14@gmail.com">Contact</a>
         </nav>
       </div>
     </div>
