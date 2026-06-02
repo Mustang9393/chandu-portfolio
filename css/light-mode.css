@@ -136,11 +136,6 @@ section,
   -webkit-text-stroke: 0 !important;
 }
 
-.hero-eyebrow,
-.meta-label,
-.meta-value,
-.section-label,
-.sec-label,
 .nav-logo,
 .nav-links a,
 .cs-nav-back,
@@ -168,10 +163,29 @@ section,
   color: var(--text-secondary) !important;
 }
 
+.hero-eyebrow,
+.meta-label,
+.section-label,
+.sec-label,
+.phone-label,
+.phone-sublabel,
+.screen-caption,
+.project-caption,
+.work-header-count,
+.work-header-label {
+  color: var(--accent) !important;
+}
+
 [style*="#3ecfff"],
 [style*="#c8b89a"],
 [style*="#3ECFFF"],
 [style*="#C8B89A"],
+[style*="color:var(--t1)"],
+[style*="color: var(--t1)"],
+[style*="color:var(--t2)"],
+[style*="color: var(--t2)"],
+[style*="color:var(--t3)"],
+[style*="color: var(--t3)"],
 [style*="#f0ede8"],
 [style*="#f4f1ec"],
 [style*="#F0EDE8"],
@@ -488,7 +502,7 @@ svg rect[fill="#000"] {
 svg text[fill="#f0ede8"],
 svg text[fill="#f4f1ec"],
 svg text[fill="#a8a8a4"] {
-  fill: #15120f !important;
+  fill: var(--accent) !important;
 }
 
 svg text[fill="#8a8a87"],

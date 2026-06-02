@@ -311,7 +311,6 @@ body.cursor-text .cursor-ring {
   background: #fff;
   color: var(--home-red-deep);
   padding: clamp(14px, 2vw, 24px);
-  border: 1px solid var(--home-red-deep);
   overflow: hidden;
 }
 
@@ -325,9 +324,9 @@ body.cursor-text .cursor-ring {
   aspect-ratio: 1;
   display: grid;
   place-items: center;
-  border: 1px solid rgba(194, 83, 83, 0.26);
+  border: 1px solid transparent;
   color: var(--home-red-deep);
-  background: rgba(194, 83, 83, 0.035);
+  background: transparent;
   font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   font-size: clamp(30px, 4.8vw, 68px);
   font-weight: 900;
@@ -342,16 +341,17 @@ body.cursor-text .cursor-ring {
 }
 
 .logo-cell.is-near {
-  background: rgba(194, 83, 83, 0.12);
-  border-color: rgba(194, 83, 83, 0.72);
+  background: rgba(194, 83, 83, 0.08);
+  border-color: transparent;
 }
 
 .logo-grid-caption {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   gap: 16px;
   margin-top: 14px;
-  color: var(--home-muted);
+  color: var(--home-red-deep);
+  text-align: center;
 }
 
 .availability {

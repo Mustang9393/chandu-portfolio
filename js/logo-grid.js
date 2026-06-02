@@ -18,9 +18,8 @@
         const distance = Math.hypot(dx, dy);
         const radius = Math.max(rect.width * 2.4, 170);
         const pull = Math.max(0, 1 - distance / radius);
-        const base = (index % 2 === 0 ? -1 : 1) * 5;
         const angle = Math.atan2(dy, dx) * (180 / Math.PI);
-        const rotation = base + angle * 0.18 * pull;
+        const rotation = angle * 0.18 * pull;
         const scale = 1 + pull * 0.11;
 
         cell.style.setProperty("--logo-rotate", `${rotation.toFixed(2)}deg`);
