@@ -132,8 +132,17 @@ body.cursor-text .cursor-ring {
   color: #fff;
   background: var(--home-red);
   border-radius: 50%;
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
   font-weight: 800;
+  line-height: 1;
   transition: transform 420ms var(--home-ease);
+}
+
+.inline-logo-glyph {
+  color: var(--home-red-deep);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
 }
 
 .site-mark:hover .site-mark-glyph {
@@ -181,7 +190,7 @@ body.cursor-text .cursor-ring {
   gap: clamp(36px, 7vw, 96px);
   min-height: calc(100svh - 72px);
   padding: clamp(52px, 8vw, 112px) var(--home-gutter) 56px;
-  align-items: end;
+  align-items: start;
 }
 
 .hero-copy {
@@ -218,6 +227,15 @@ body.cursor-text .cursor-ring {
 
 .hero-title span {
   display: block;
+}
+
+.hero-title .name-glyph {
+  display: inline-block;
+  color: var(--home-red-deep);
+  font-family: "Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+  transform: translateY(0.02em);
 }
 
 .hero-title .outline {
@@ -268,8 +286,9 @@ body.cursor-text .cursor-ring {
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   min-height: 560px;
+  padding-top: clamp(42px, 5.8vw, 86px);
 }
 
 .logo-grid-wrap {
@@ -643,6 +662,7 @@ body.cursor-text .cursor-ring {
 
   .logo-field {
     min-height: auto;
+    padding-top: 0;
   }
 
   .project-grid,
