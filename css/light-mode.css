@@ -363,6 +363,30 @@ section img[style*="border"] {
   color: var(--accent) !important;
 }
 
+.next-project {
+  background: rgba(255, 253, 250, 0.74) !important;
+}
+
+.next-project a {
+  display: inline-flex !important;
+  align-items: center !important;
+  min-height: 42px !important;
+  padding: 10px 14px !important;
+  color: var(--accent) !important;
+  border: 1px solid var(--accent-border) !important;
+  background: var(--accent-dim) !important;
+  font-family: var(--mono, "DM Mono", monospace) !important;
+  font-size: 11px !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+}
+
+.next-project a:hover {
+  color: #fff !important;
+  background: var(--accent) !important;
+  border-color: var(--accent) !important;
+}
+
 .phone-sublabel {
   color: var(--text-secondary) !important;
 }
@@ -466,6 +490,92 @@ section img[style*="border"] {
 .project-card:hover .arrow-btn {
   border-color: var(--accent) !important;
   color: var(--accent) !important;
+}
+
+.offline-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.offline-modal[aria-hidden="true"] {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.offline-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(21, 18, 15, 0.34);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.offline-modal__panel {
+  position: relative;
+  z-index: 1;
+  width: min(520px, 100%);
+  padding: clamp(28px, 5vw, 44px);
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  box-shadow: 0 28px 90px rgba(21, 18, 15, 0.18);
+}
+
+.offline-modal__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid var(--accent-border);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.offline-modal__eyebrow {
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-family: var(--mono, "DM Mono", monospace);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.offline-modal__title {
+  margin-bottom: 14px;
+  color: var(--text-primary);
+  font-family: var(--serif, "Playfair Display", serif);
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.04;
+}
+
+.offline-modal__body {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.offline-modal__button {
+  margin-top: 26px;
+  padding: 12px 18px;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  font-family: var(--mono, "DM Mono", monospace);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+body.offline-modal-open {
+  overflow: hidden;
 }
 
 .graphic-block-label {
