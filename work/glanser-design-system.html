@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <title>Glanser Design System - Case Study - Chandu MP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter+Tight:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/reset.css">
+  <link rel="stylesheet" href="../css/case-study-redesign.css">
+</head>
+<body>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <nav class="case-nav">
+    <a href="../index.html">All work</a>
+    <span class="case-nav-title">Glanser Design System</span>
+    <a href="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev" target="_blank" rel="noopener">Figma File</a>
+  </nav>
+
+  <main>
+    <section class="case-hero">
+      <div data-reveal>
+        <p class="case-label">SaaS commerce / design systems / Lithium platform</p>
+        <h1 class="case-title">Glanser <em>System</em></h1>
+        <p class="case-summary">
+          A scalable design system for Glanser, built to turn the Lithium platform into a
+          configurable foundation for B2B and B2C commerce brands.
+        </p>
+        <div class="case-meta">
+          <div class="case-meta-item">
+            <div class="case-meta-label">Role</div>
+            <div class="case-meta-value">Product Design and Design System Lead</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Platform</div>
+            <div class="case-meta-value">Glanser SaaS commerce platform, based on Lithium</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Responsibilities</div>
+            <div class="case-meta-value">Design system architecture, variables, components, product patterns, documentation, client prototype enablement</div>
+          </div>
+          <div class="case-meta-item">
+            <div class="case-meta-label">Scale</div>
+            <div class="case-meta-value">Multi-brand B2B/B2C storefronts, client-specific modes, reusable commerce workflows</div>
+          </div>
+        </div>
+        <div class="case-cta-row">
+          <a class="case-button primary" href="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev" target="_blank" rel="noopener">View Figma File ↗</a>
+          <a class="case-button" href="mailto:chandu.mp.14@gmail.com">Discuss Project</a>
+        </div>
+      </div>
+
+      <div class="case-hero-media" data-reveal>
+        <img src="../assets/images/projects/case-study-assets/glanser-system-colours.png" alt="Glanser design system colour foundations and semantic tokens">
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Brief</p>
+          <h2>Build one system that could support many <em>commerce brands.</em></h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            Glanser is a SaaS platform for brands and businesses to host B2C and B2B commerce
+            experiences on top of Lithium. The design system needed to support storefronts,
+            customer portals, commerce journeys, authenticated states, and client-specific
+            brand expression without rebuilding the interface for every new business.
+          </p>
+          <p class="case-body">
+            My job was to create a foundation that gave the product team consistency and speed,
+            while still giving client teams enough flexibility to create distinct branded
+            experiences from the same underlying product logic.
+          </p>
+          <blockquote class="case-quote">The goal was not a static UI kit. It was a configurable product layer for multi-brand SaaS commerce.</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">System model</p>
+          <h2>The file is structured from foundations to product patterns.</h2>
+        </div>
+        <div data-reveal>
+          <div class="process-board">
+            <div class="process-step">
+              <span>01</span>
+              <h3>Foundations</h3>
+              <p>Colours, typography, radii, strokes, icons, and baseline scales for visual consistency.</p>
+            </div>
+            <div class="process-step">
+              <span>02</span>
+              <h3>Controls</h3>
+              <p>Buttons, inputs, chips, avatar, search, navigation, tabs, and responsive states.</p>
+            </div>
+            <div class="process-step">
+              <span>03</span>
+              <h3>Commerce</h3>
+              <p>Cards, tables, carousels, breadcrumbs, modals, footers, product listings, and sections.</p>
+            </div>
+            <div class="process-step">
+              <span>04</span>
+              <h3>Workflows</h3>
+              <p>Checkout, delivery, payment, quote replies, dashboards, product documents, and portal flows.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section media-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Variables</p>
+          <h2>Primitive palettes become semantic roles, then component behavior.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            The colour system uses a layered token model. Primitive brand scales such as primary,
+            secondary, accent, tertiary, success, warning, error, and grey define the raw palette.
+            Semantic tokens such as background, border, icon, text, brand, and modal roles define
+            how the palette should behave inside the product. Component tokens then localize that
+            behavior into buttons, cards, inputs, badges, and modals.
+          </p>
+          <p class="case-body">
+            This separation makes the system scalable: brand values can change, but interface roles
+            stay stable. A new client brand can inherit the same product components while remapping
+            the variables that control expression.
+          </p>
+          <div class="screen">
+            <img src="../assets/images/projects/case-study-assets/glanser-system-colours.png" alt="Glanser colour tokens, semantic colour groups, and brand scales">
+          </div>
+          <p class="screen-caption">The file includes primitive brand scales, semantic colour groups, and component-level tokens for buttons, cards, inputs, modals, badges, and scrollbars.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Modes</p>
+          <h2>Scalability shows up in brand, state, auth, and responsive modes.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            The design system uses mode-based thinking at several layers. Typography and colour
+            documentation include Glanser and Skridr/SEC examples. Navigation supports consumer
+            and business-oriented modes, logged-in and logged-out states, desktop and mobile
+            layouts, expanded menus, and search states. Search components also separate logged-in
+            and logged-out behavior.
+          </p>
+          <div class="case-card-grid">
+            <article class="case-card">
+              <span class="case-label">Brand</span>
+              <h3>Glanser and Skridr</h3>
+              <p>Colour and typography boards document how one token model can support multiple visual identities.</p>
+            </article>
+            <article class="case-card">
+              <span class="case-label">Auth</span>
+              <h3>Logged in/out</h3>
+              <p>Search and navigation adapt to different user states without duplicating the whole system.</p>
+            </article>
+            <article class="case-card">
+              <span class="case-label">Business model</span>
+              <h3>Consumer and B2B</h3>
+              <p>Navigation includes separate consumer and business-oriented modes for different commerce contexts.</p>
+            </article>
+            <article class="case-card">
+              <span class="case-label">Device</span>
+              <h3>Desktop and mobile</h3>
+              <p>Navigation, carousel, footer, and page components include mobile-specific variants and layouts.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section media-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Component depth</p>
+          <h2>Variants turn repeated decisions into reusable rules.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            Buttons are the clearest proof of the system's maturity. The library includes hundreds
+            of button variants across colour, state, size, pill shape, and icon behavior. That
+            gives designers and product teams a predictable model for primary actions, secondary
+            actions, icon-only controls, disabled states, hover/focus states, and dense commerce UI.
+          </p>
+          <div class="screen-flow-grid mixed">
+            <figure class="flow-screen hero-frame">
+              <img src="../assets/images/projects/case-study-assets/glanser-system-buttons.png" alt="Glanser button component variants">
+              <figcaption><strong>Button system</strong>Primary, secondary, tertiary, accent, and ghost families are controlled through size, state, pill, and icon-position variants.</figcaption>
+            </figure>
+            <figure class="flow-screen">
+              <img src="../assets/images/projects/case-study-assets/glanser-system-typography.png" alt="Glanser typography and Skridr SEC typography boards">
+              <figcaption><strong>Typography modes</strong>The typography page documents Glanser and Skridr/SEC examples, showing how foundations can support brand-specific expression.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Audit evidence</p>
+          <h2>The library has depth across foundations, components, and product flows.</h2>
+        </div>
+        <div data-reveal>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <strong>25</strong>
+              <span>Top-level pages spanning foundations, components, layouts, sections, modals, tables, and product patterns.</span>
+            </div>
+            <div class="metric-card">
+              <strong>605</strong>
+              <span>Button symbols across colour, state, size, pill, and icon behavior variants.</span>
+            </div>
+            <div class="metric-card">
+              <strong>583</strong>
+              <span>Icon symbols with type, fill, and size variant axes for consistent product affordances.</span>
+            </div>
+            <div class="metric-card">
+              <strong>92</strong>
+              <span>Card symbols supporting content, state, status, and mode-driven commerce layouts.</span>
+            </div>
+            <div class="metric-card">
+              <strong>79</strong>
+              <span>Page-component symbols for checkout, delivery, payment, dashboards, quote replies, and documents.</span>
+            </div>
+            <div class="metric-card">
+              <strong>24</strong>
+              <span>Modal symbols for login, signup, quick search, mini cart, organization selection, and upload flows.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Product patterns</p>
+          <h2>The system encodes commerce workflows, not just UI surfaces.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            The higher layers of the library include product cards, category listings, search,
+            navigation states, shopping cart templates, checkout summary, delivery templates,
+            shipping templates, payment templates, payment confirmation, product documents,
+            quote replies, profile dashboards, order management tables, wishlists, quick search,
+            login, signup, mini cart, and organization selection.
+          </p>
+          <div class="journey-map">
+            <div class="journey-row">
+              <div class="journey-cell"><strong>Storefront</strong>Product cards, category listings, carousel banners, sections, and responsive content blocks.</div>
+              <div class="journey-cell"><strong>Decision</strong>Search, filters, product documents, product detail tabs, comparison tables, and suggested combos.</div>
+              <div class="journey-cell"><strong>System response</strong>Reusable commerce components reduce one-off layout work across client storefronts.</div>
+            </div>
+            <div class="journey-row">
+              <div class="journey-cell"><strong>Checkout</strong>Cart templates, checkout summaries, delivery options, payment flows, and confirmation states.</div>
+              <div class="journey-cell"><strong>Account</strong>Profile dashboard, dashboard lists, order returns, quote replies, and organization selection.</div>
+              <div class="journey-cell"><strong>System response</strong>Complex B2B/B2C flows become repeatable product modules rather than isolated screens.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Scalability</p>
+          <h2>The same foundation can power custom client brands.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            The system scales in three ways. It scales across brands because primitive palettes
+            can be remapped while semantic roles remain stable. It scales across product modes
+            because components account for auth, business model, responsive layout, interaction
+            state, and content density. It scales across product depth because the library covers
+            foundations, controls, layouts, commerce modules, and full product workflows.
+          </p>
+          <p class="case-body">
+            This is what makes the library useful as a foundation for custom client prototypes:
+            the identity can shift, but the interaction model and product architecture stay intact.
+          </p>
+          <div class="case-chips">
+            <span class="case-chip">Multi-brand token architecture</span>
+            <span class="case-chip">Semantic variables</span>
+            <span class="case-chip">B2B/B2C commerce patterns</span>
+            <span class="case-chip">Responsive component variants</span>
+            <span class="case-chip">Reusable client prototype foundation</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="case-section">
+      <div class="case-section-grid">
+        <div data-reveal>
+          <p class="case-label">Outcome</p>
+          <h2>A product platform layer for faster, more consistent commerce design.</h2>
+        </div>
+        <div data-reveal>
+          <p class="case-body">
+            The Glanser design system gave the product team a scalable way to design, prototype,
+            and extend Lithium-based commerce products. It reduced repeated design decisions,
+            improved consistency across B2B and B2C workflows, and created a foundation that can
+            grow with new clients, new brands, and new product surfaces.
+          </p>
+          <blockquote class="case-quote">The strongest proof of the system is reuse: one foundation, many branded commerce experiences.</blockquote>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="case-footer">
+    <span>Chandu MP / Glanser Design System</span>
+    <a href="qurios.html">Next: Qurios AI</a>
+  </footer>
+
+  <script src="../js/cursor.js"></script>
+  <script src="../js/logo-grid.js"></script>
+</body>
+</html>
