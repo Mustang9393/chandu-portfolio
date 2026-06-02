@@ -239,7 +239,7 @@ body.cursor-text .cursor-ring {
 
 .case-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1px;
   background: var(--case-line);
   border: 1px solid var(--case-line);
@@ -291,6 +291,71 @@ body.cursor-text .cursor-ring {
   color: var(--case-muted);
   font-size: 16px;
   line-height: 1.62;
+}
+
+.persona-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 28px;
+  background: var(--case-line);
+  border: 1px solid var(--case-line);
+}
+
+.persona-card {
+  min-height: 280px;
+  padding: 24px;
+  background: var(--case-bg);
+}
+
+.persona-card h3 {
+  margin: 14px 0 8px;
+  color: var(--case-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(30px, 3.5vw, 48px);
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+}
+
+.persona-card p,
+.persona-card li {
+  color: var(--case-muted);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.persona-card ul {
+  display: grid;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 36px;
+}
+
+.comparison-card {
+  padding: 24px;
+  background: var(--case-bg);
+  border: 1px solid var(--case-line);
+}
+
+.comparison-card h3 {
+  color: var(--case-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: 32px;
+  letter-spacing: -0.05em;
+  line-height: 1;
+}
+
+.comparison-card p {
+  margin-top: 12px;
+  color: var(--case-muted);
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .metric-grid {
@@ -439,6 +504,22 @@ body.cursor-text .cursor-ring {
   display: block;
 }
 
+.screen.contain {
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 3vw, 36px);
+}
+
+.screen.contain img {
+  width: 100%;
+  max-height: 760px;
+  object-fit: contain;
+}
+
+.screen.lowfi {
+  background: #ffffff;
+}
+
 .screen video {
   width: 100%;
   height: auto;
@@ -478,6 +559,15 @@ body.cursor-text .cursor-ring {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.phone-screen.contain {
+  background: #ffffff;
+}
+
+.phone-screen.contain img {
+  height: auto;
+  object-fit: contain;
 }
 
 .screen-caption {
@@ -533,6 +623,8 @@ body.cursor-text .cursor-ring {
   .case-hero,
   .case-section-grid,
   .case-card-grid,
+  .persona-grid,
+  .comparison-grid,
   .phone-screens,
   .metric-grid,
   .process-board,

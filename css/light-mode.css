@@ -172,9 +172,17 @@ section,
 [style*="#c8b89a"],
 [style*="#3ECFFF"],
 [style*="#C8B89A"],
+[style*="#f0ede8"],
+[style*="#f4f1ec"],
+[style*="#F0EDE8"],
+[style*="#F4F1EC"],
 [style*="rgb(62, 207, 255)"],
 [style*="rgb(62,207,255)"],
-[style*="rgb(200, 184, 154)"] {
+[style*="rgb(200, 184, 154)"],
+[style*="rgb(240, 237, 232)"],
+[style*="rgb(240,237,232)"],
+[style*="rgb(244, 241, 236)"],
+[style*="rgb(244,241,236)"] {
   color: var(--accent) !important;
   border-color: var(--accent-border) !important;
 }
@@ -201,6 +209,20 @@ section,
 [style*="rgb(168,168,164)"] {
   color: var(--accent) !important;
   border-color: var(--accent-border) !important;
+}
+
+.body strong,
+.section-body strong,
+.hook-body strong,
+.hook-stat-label strong,
+.decision-body strong,
+.pain-body strong,
+.flow-body strong,
+.stack-desc strong,
+.insight-body strong,
+.outcome-label strong,
+.meta-value strong {
+  color: var(--accent) !important;
 }
 
 .hero-eyebrow::before,

@@ -466,8 +466,8 @@ body.cursor-text .cursor-ring {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(23, 23, 23, 0.12), rgba(23, 23, 23, 0.02) 34%, rgba(23, 23, 23, 0.42) 58%, rgba(23, 23, 23, 0.9)),
-    linear-gradient(90deg, rgba(23, 23, 23, 0.42), rgba(23, 23, 23, 0.02) 58%);
+    linear-gradient(180deg, rgba(23, 23, 23, 0.22), rgba(23, 23, 23, 0.02) 28%, rgba(23, 23, 23, 0.22) 48%, rgba(23, 23, 23, 0.88) 78%, rgba(23, 23, 23, 0.96)),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.34), rgba(23, 23, 23, 0.02) 58%);
 }
 
 .project-card:hover .project-image {
@@ -488,12 +488,20 @@ body.cursor-text .cursor-ring {
 }
 
 .project-copy {
-  max-width: min(720px, calc(100% - 64px));
-  text-shadow: 0 2px 22px rgba(0, 0, 0, 0.45);
+  align-self: flex-start;
+  max-width: min(760px, calc(100% - 78px));
+  margin-top: auto;
+  text-shadow: 0 2px 26px rgba(0, 0, 0, 0.58);
 }
 
 .project-index {
+  align-self: flex-start;
+  padding: 6px 10px;
   color: #fff;
+  background: rgba(23, 23, 23, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .project-tags {
@@ -501,14 +509,17 @@ body.cursor-text .cursor-ring {
   justify-content: flex-end;
   gap: 8px;
   flex-wrap: wrap;
-  max-width: 55%;
-  color: var(--home-ink);
+  max-width: min(62%, 520px);
+  color: #fff;
 }
 
 .project-tags span {
-  padding: 5px 9px;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.54);
+  padding: 6px 10px;
+  background: rgba(23, 23, 23, 0.54);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.34);
 }
 
 .project-title {
@@ -528,7 +539,7 @@ body.cursor-text .cursor-ring {
 
 .project-desc {
   max-width: 520px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 255, 255, 0.94);
   font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.45;
   letter-spacing: -0.02em;
