@@ -45,10 +45,12 @@ body {
 
 .cursor-dot {
   background: var(--accent) !important;
+  z-index: 5000 !important;
 }
 
 .cursor-ring {
   border-color: rgba(194, 83, 83, 0.38) !important;
+  z-index: 4999 !important;
 }
 
 body.cursor-hover .cursor-dot,

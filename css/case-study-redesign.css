@@ -31,7 +31,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 5000;
   width: 8px;
   height: 8px;
   pointer-events: none;
@@ -45,7 +45,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 4999;
   width: 36px;
   height: 36px;
   pointer-events: none;
@@ -699,6 +699,54 @@ body.figma-gate-open {
   text-transform: uppercase;
 }
 
+.brand-proof-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.brand-proof-card {
+  overflow: hidden;
+  background: var(--case-bg);
+  border: 1px solid var(--case-line);
+  box-shadow: 0 20px 54px rgba(23, 23, 23, 0.11);
+}
+
+.brand-proof-card.large {
+  grid-column: 1 / -1;
+}
+
+.brand-proof-card img {
+  display: block;
+  width: 100%;
+  max-height: 760px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.brand-proof-card:not(.large) img {
+  aspect-ratio: 16 / 10;
+}
+
+.brand-proof-card figcaption {
+  padding: 16px 18px 18px;
+  color: var(--case-muted);
+  font-size: 15px;
+  line-height: 1.55;
+  border-top: 1px solid var(--case-line);
+}
+
+.brand-proof-card figcaption strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--case-red);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .screen-notes {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -873,6 +921,7 @@ body.figma-gate-open {
   .screen-grid,
   .screen-flow-grid,
   .screen-flow-grid.mixed,
+  .brand-proof-grid,
   .screen-notes,
   .sketch-grid {
     grid-template-columns: 1fr;

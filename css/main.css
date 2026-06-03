@@ -29,7 +29,7 @@
   background: var(--accent);
   border-radius: 50%;
   pointer-events: none;
-  z-index: var(--z-cursor);
+  z-index: 5000;
   transform: translate(-50%, -50%);
   transition:
     width var(--duration-base) var(--ease-out),
@@ -48,7 +48,7 @@
   border: 1px solid rgba(62, 207, 255, 0.35);
   border-radius: 50%;
   pointer-events: none;
-  z-index: var(--z-cursor);
+  z-index: 4999;
   transform: translate(-50%, -50%);
   transition:
     width 0.4s var(--ease-out),

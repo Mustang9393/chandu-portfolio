@@ -36,7 +36,7 @@
     .cursor-dot {
       position: fixed; top: 0; left: 0; width: 8px; height: 8px;
       background: var(--accent); border-radius: 50%;
-      pointer-events: none; z-index: 1000;
+      pointer-events: none; z-index: 5000;
       transform: translate(-50%,-50%);
       transition: width .3s var(--ease), height .3s var(--ease), background .3s;
       will-change: transform;
@@ -44,7 +44,7 @@
     .cursor-ring {
       position: fixed; top: 0; left: 0; width: 36px; height: 36px;
       border: 1px solid rgba(62,207,255,.35); border-radius: 50%;
-      pointer-events: none; z-index: 1000;
+      pointer-events: none; z-index: 4999;
       transform: translate(-50%,-50%);
       transition: width .4s var(--ease), height .4s, border-color .4s;
       will-change: transform;

@@ -27,8 +27,8 @@
     }
 
     /* Cursor */
-    .cursor-dot { position:fixed; top:0; left:0; width:8px; height:8px; background:var(--accent); border-radius:50%; pointer-events:none; z-index:1000; transform:translate(-50%,-50%); transition:width .3s var(--ease),height .3s,background .3s; will-change:transform; }
-    .cursor-ring { position:fixed; top:0; left:0; width:36px; height:36px; border:1px solid rgba(62,207,255,.35); border-radius:50%; pointer-events:none; z-index:1000; transform:translate(-50%,-50%); transition:width .4s var(--ease),height .4s,border-color .4s; will-change:transform; }
+    .cursor-dot { position:fixed; top:0; left:0; width:8px; height:8px; background:var(--accent); border-radius:50%; pointer-events:none; z-index:5000; transform:translate(-50%,-50%); transition:width .3s var(--ease),height .3s,background .3s; will-change:transform; }
+    .cursor-ring { position:fixed; top:0; left:0; width:36px; height:36px; border:1px solid rgba(62,207,255,.35); border-radius:50%; pointer-events:none; z-index:4999; transform:translate(-50%,-50%); transition:width .4s var(--ease),height .4s,border-color .4s; will-change:transform; }
     body.ch .cursor-dot { width:48px; height:48px; background:rgba(62,207,255,.1); border-radius:50%; }
     body.ch .cursor-ring { width:48px; height:48px; border-color:var(--accent); }
 
@@ -109,6 +109,10 @@
     .app-mockup-bar { background:#111; border-bottom:1px solid var(--border); height:32px; display:flex; align-items:center; padding:0 12px; gap:6px; }
     .app-dot { width:10px; height:10px; border-radius:50%; }
     .app-url { margin-left:auto; font-family:var(--mono); font-size:10px; color:var(--t3); }
+    .app-screenshot { width:100%; max-height:640px; object-fit:cover; object-position:top center; background:#080808; }
+    .live-embed { border:1px solid var(--border); background:var(--bg2); overflow:hidden; }
+    .live-embed iframe { display:block; width:100%; height:min(780px, 80svh); min-height:620px; border:0; background:#080808; }
+    .live-embed-note { font-family:var(--mono); font-size:11px; color:var(--t3); letter-spacing:.06em; padding:12px 0; display:flex; align-items:center; gap:8px; }
 
     /* Category pills */
     .cat-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:32px 0; }
@@ -262,7 +266,6 @@
           </div>
         </div>
         <div class="reveal-right">
-          <!-- Live app mockup - Browser frame -->
           <div class="app-mockup">
             <div class="app-mockup-bar">
               <div class="app-dot" style="background:#ff5f57;"></div>
@@ -270,36 +273,35 @@
               <div class="app-dot" style="background:#28c840;"></div>
               <span class="app-url">decision-disco.vercel.app</span>
             </div>
-            <div style="padding:40px 32px; background:#080808; min-height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:32px;">
-              <!-- App header -->
-              <div style="text-align:center;">
-                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.2em; text-transform:uppercase; margin-bottom:10px;">✨ Decision Disco</div>
-                <div style="font-family:'Playfair Display',serif; font-size:clamp(22px,3vw,30px); font-weight:700; color:var(--t1); line-height:1.2;">Real advice.<br>No coin flips.</div>
-              </div>
-              <!-- Vibe selector -->
-              <div style="width:100%; max-width:380px;">
-                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px;">The Vibe</div>
-                <div style="background:var(--bg2); border:1px solid var(--border); padding:14px 18px; display:flex; align-items:center; justify-content:space-between; font-size:14px; color:var(--t2);">
-                  <span>🍔 Food &amp; Lunch</span>
-                  <span style="color:var(--t3); font-size:12px;">▾</span>
-                </div>
-              </div>
-              <!-- Question input -->
-              <div style="width:100%; max-width:380px;">
-                <div style="font-family:'DM Mono',monospace; font-size:10px; color:var(--t3); letter-spacing:.12em; text-transform:uppercase; margin-bottom:8px;">The Question</div>
-                <div style="background:var(--bg2); border:1px solid var(--accent); border-left:3px solid var(--accent); padding:16px 18px; min-height:72px; font-size:14px; color:var(--t3); font-style:italic;">
-                  Biryani or pasta? I've been thinking about this for 20 minutes...
-                </div>
-              </div>
-              <!-- CTA -->
-              <div style="background:var(--accent); color:#080808; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.12em; text-transform:uppercase; padding:14px 32px; display:inline-flex; align-items:center; gap:8px; font-weight:400;">
-                Get Clarity →
-              </div>
-            </div>
+            <img class="app-screenshot" src="../assets/images/projects/case-study-assets/decision-disco-live.png" alt="Decision Disco live app UI with dilemma type selector and question input">
           </div>
           <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--t3); letter-spacing:.06em; padding:10px 0; display:flex; align-items:center; gap:8px;">
-            <span style="color:var(--border2);">↑</span> The actual app — live at decision-disco.vercel.app
+            <span style="color:var(--border2);">↑</span> Real capture from the live app, not a recreated mockup.
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE EMBED -->
+  <section>
+    <div class="container">
+      <div class="sec-header reveal">
+        <span class="sec-num">00</span>
+        <div class="sec-rule"></div>
+        <span class="sec-diamond">◆</span>
+        <div class="sec-rule"></div>
+        <span class="sec-label">Live product</span>
+      </div>
+      <div class="reveal">
+        <h2 class="heading">Use the actual app<br><em>inside the case study.</em></h2>
+        <p class="body" style="margin-top:16px; margin-bottom:32px;">The project is not just a prototype or static concept. It is a deployed product, so the case study lets visitors try the real interaction without leaving the page.</p>
+        <div class="live-embed">
+          <iframe src="https://decision-disco.vercel.app" title="Decision Disco live app" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="live-embed-note">
+          <span style="color:var(--border2);">↗</span>
+          If the embed is blocked by the browser, <a href="https://decision-disco.vercel.app" target="_blank" rel="noopener" style="color:var(--accent);">open the live app</a>.
         </div>
       </div>
     </div>

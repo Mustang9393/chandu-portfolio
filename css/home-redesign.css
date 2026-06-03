@@ -30,7 +30,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 5000;
   width: 8px;
   height: 8px;
   pointer-events: none;
@@ -49,7 +49,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 999;
+  z-index: 4999;
   width: 36px;
   height: 36px;
   pointer-events: none;
