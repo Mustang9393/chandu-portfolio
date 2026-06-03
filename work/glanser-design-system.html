@@ -4,7 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="A scalable multi-brand design system for Glanser, a Lithium-based SaaS commerce platform for B2B and B2C brands.">
+  <meta property="og:title" content="Glanser Design System - Chandu MP">
+  <meta property="og:description" content="A scalable multi-brand design system for a Lithium-based SaaS commerce platform.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="/assets/images/site-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="599">
+  <meta property="og:image:height" content="786">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Glanser Design System - Chandu MP">
+  <meta name="twitter:description" content="A scalable multi-brand design system for a Lithium-based SaaS commerce platform.">
+  <meta name="twitter:image" content="/assets/images/site-preview.png">
   <title>Glanser Design System - Case Study - Chandu MP</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400&family=Inter+Tight:wght@500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -19,7 +32,7 @@
   <nav class="case-nav">
     <a href="../index.html">All work</a>
     <span class="case-nav-title">Glanser Design System</span>
-    <a href="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev" target="_blank" rel="noopener">Figma File</a>
+    <a href="#glanser-figma-access" data-protected-figma data-figma-url="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev">Figma File</a>
   </nav>
 
   <main>
@@ -50,7 +63,7 @@
           </div>
         </div>
         <div class="case-cta-row">
-          <a class="case-button primary" href="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev" target="_blank" rel="noopener">View Figma File ↗</a>
+          <a class="case-button primary" href="#glanser-figma-access" data-protected-figma data-figma-url="https://www.figma.com/design/9wDmtoK5UhxskjSLFIREAb/Design-System?node-id=0-1&m=dev">View Figma File ↗</a>
           <a class="case-button" href="mailto:chandu.mp.14@gmail.com">Discuss Project</a>
         </div>
       </div>
@@ -330,7 +343,75 @@
     <a href="qurios.html">Next: Qurios AI</a>
   </footer>
 
+  <div class="figma-gate" id="glanser-figma-access" aria-hidden="true">
+    <div class="figma-gate-panel" role="dialog" aria-modal="true" aria-labelledby="figma-gate-title">
+      <button class="figma-gate-close" type="button" aria-label="Close password prompt">×</button>
+      <p class="case-label">Protected Figma file</p>
+      <h2 id="figma-gate-title">Enter the access password.</h2>
+      <form class="figma-gate-form">
+        <label for="figma-password">Password</label>
+        <input id="figma-password" name="figma-password" type="password" autocomplete="off" spellcheck="false">
+        <p class="figma-gate-error" role="alert" aria-live="polite"></p>
+        <button class="case-button primary" type="submit">Open Figma File ↗</button>
+      </form>
+    </div>
+  </div>
+
   <script src="../js/cursor.js"></script>
   <script src="../js/logo-grid.js"></script>
+  <script>
+    (() => {
+      const PASSWORD = 'Whencanistart';
+      const gate = document.querySelector('.figma-gate');
+      const form = document.querySelector('.figma-gate-form');
+      const input = document.querySelector('#figma-password');
+      const error = document.querySelector('.figma-gate-error');
+      const close = document.querySelector('.figma-gate-close');
+      let pendingUrl = '';
+
+      const openGate = (url) => {
+        pendingUrl = url;
+        gate.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('figma-gate-open');
+        input.value = '';
+        error.textContent = '';
+        setTimeout(() => input.focus(), 80);
+      };
+
+      const closeGate = () => {
+        gate.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('figma-gate-open');
+        pendingUrl = '';
+      };
+
+      document.querySelectorAll('[data-protected-figma]').forEach((link) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          openGate(link.dataset.figmaUrl);
+        });
+      });
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (input.value === PASSWORD && pendingUrl) {
+          window.open(pendingUrl, '_blank', 'noopener');
+          closeGate();
+          return;
+        }
+        error.textContent = 'That password is not quite right.';
+        input.select();
+      });
+
+      close.addEventListener('click', closeGate);
+      gate.addEventListener('click', (event) => {
+        if (event.target === gate) closeGate();
+      });
+      window.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && gate.getAttribute('aria-hidden') === 'false') {
+          closeGate();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>

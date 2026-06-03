@@ -214,6 +214,105 @@ body.cursor-text .cursor-ring {
   transform: translateY(-2px);
 }
 
+.figma-gate {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  pointer-events: none;
+  opacity: 0;
+  background: rgba(23, 23, 23, 0.56);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transition: opacity 180ms ease;
+}
+
+.figma-gate[aria-hidden="false"] {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.figma-gate-panel {
+  position: relative;
+  width: min(100%, 520px);
+  padding: clamp(28px, 5vw, 44px);
+  background:
+    linear-gradient(90deg, rgba(194, 83, 83, 0.08) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(194, 83, 83, 0.08) 1px, transparent 1px),
+    var(--case-bg);
+  background-size: 28px 28px;
+  border: 1px solid var(--case-line);
+  box-shadow: 0 34px 90px rgba(23, 23, 23, 0.28);
+}
+
+.figma-gate-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  color: var(--case-red);
+  background: rgba(194, 83, 83, 0.06);
+  border: 1px solid rgba(194, 83, 83, 0.24);
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.figma-gate-panel h2 {
+  max-width: 360px;
+  margin-top: 14px;
+  color: var(--case-ink);
+  font-family: "Inter Tight", Inter, system-ui, sans-serif;
+  font-size: clamp(34px, 5vw, 58px);
+  font-weight: 600;
+  letter-spacing: -0.06em;
+  line-height: 0.94;
+}
+
+.figma-gate-form {
+  display: grid;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.figma-gate-form label {
+  color: var(--case-red);
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.figma-gate-form input {
+  width: 100%;
+  min-height: 52px;
+  padding: 12px 14px;
+  color: var(--case-ink);
+  background: #fff;
+  border: 1px solid var(--case-line);
+  font: inherit;
+}
+
+.figma-gate-form input:focus {
+  outline: 2px solid rgba(194, 83, 83, 0.42);
+  outline-offset: 2px;
+}
+
+.figma-gate-error {
+  min-height: 20px;
+  color: var(--case-red);
+  font-size: 14px;
+}
+
+body.figma-gate-open {
+  overflow: hidden;
+}
+
 .case-hero-media {
   overflow: hidden;
   background: var(--case-black);
